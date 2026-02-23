@@ -3,10 +3,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-
-  // 👇 BASE MUST BE HERE (top-level)
- base: "/personal-portfolio/",
-
   server: {
     host: true,
   },
