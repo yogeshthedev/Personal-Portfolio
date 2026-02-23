@@ -20,7 +20,6 @@
           font-weight: 600;
           font-family: "Dancing Script", cursive;
           color: white;
-          
         }
       }
 
@@ -48,6 +47,7 @@
     .max-hamburger {
       width: 40px;
       height: 40px;
+      position: fixed;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -62,7 +62,7 @@
 
       &.open {
         background-color: transparent;
-        position: fixed;
+
         top: 1.5rem;
         right: 1.5rem;
         span {
@@ -76,7 +76,9 @@
         height: 4px;
         background-color: black;
         border-radius: 2px;
-        transition: transform 0.3s ease, top 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          top 0.3s ease;
       }
 
       span:first-child {

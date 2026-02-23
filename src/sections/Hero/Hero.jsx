@@ -5,10 +5,10 @@ import "./Hero.modules.scss";
 
 const Hero = () => {
   return (
-    <div className="hero-section">
+    <div className="hero-section" id="home">
 
       <MarqueeComponent />
-      <div className="main-section">
+      <div className="main-section" >
         <div className="center-hero-img">
           <img src="/hero-img.jpg" alt="Hero Image"></img>
 

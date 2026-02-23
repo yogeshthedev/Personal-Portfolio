@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.modules.scss";
 import Menu from "../Menu/Menu";
 import Button from "../Button/Button";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
   return (
     <nav className="navbar-wrapper">
@@ -32,7 +36,7 @@ const Navbar = () => {
           <span></span>
         </div>
       </div>
-      <Menu isOpen={isOpen} />
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
     </nav>
   );
 };
