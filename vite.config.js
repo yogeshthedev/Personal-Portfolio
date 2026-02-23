@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
 
   // 👇 BASE MUST BE HERE (top-level)
-  base: "/personal-porfolio/",
+ base: "/personal-portfolio/",
 
   server: {
     host: true,
