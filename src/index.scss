@@ -1,0 +1,77 @@
+/* Dark Mode Basic Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: #fd7432;
+  color: #121212;
+}
+::selection {
+  background-color: #fd7432;
+  color: #121212;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  font-family: "Funnel Display", sans-serif;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+a {
+  color: #bb86fc; /* Light accent link color */
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Optional smooth transitions for dark mode UI */
+body,
+a,
+button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+

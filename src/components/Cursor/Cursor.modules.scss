@@ -1,0 +1,57 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+will-change: transform, width, height;
+  width: 20px;
+  height: 20px;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #2e0648;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  font-weight: bold;
+  color: #2e0648;
+
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* BIG CIRCLE ON PROJECT HOVER */
+.custom-cursor.cursor-project {
+  width: 110px;
+  height: 110px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* TEXT */
+.cursor-text {
+  pointer-events: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: black;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Disable custom cursor on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}

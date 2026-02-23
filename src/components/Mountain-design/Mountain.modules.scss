@@ -1,0 +1,28 @@
+.mountain-range {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  pointer-events: none;
+  padding: 1rem 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .mountain-range {
+    padding-top: 1rem;
+   
+  }
+}
+
+@media (min-width: 1024px) {
+  .mountain-range {
+    padding-top: 0;
+  }
+}

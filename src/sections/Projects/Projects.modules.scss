@@ -1,0 +1,226 @@
+/* ==================================================
+   PROJECT SECTION
+================================================== */
+.project-section {
+  padding: 7rem 0;
+  color: #ffffff;
+
+  .project-container {
+    padding: 0 4vw; /* fluid padding instead of centering */
+  }
+
+  .project-title {
+    font-size: 3.2rem;
+    margin-bottom: 6rem;
+    font-weight: 500;
+  }
+}
+
+/* ==================================================
+   PROJECT LIST
+================================================== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+/* ==================================================
+   PROJECT CARD
+================================================== */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ==================================================
+   PROJECT PREVIEW
+================================================== */
+.project-preview {
+  position: relative;
+  width: 100%;
+  height: 260px; /* mobile default */
+  background: #0f0f0f;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    inset: 0; /* top:0 right:0 bottom:0 left:0 */
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+    max-width: 100%;
+
+    opacity: 1;
+    transition:
+      opacity 0.5s ease,
+      transform 0.7s ease;
+    will-change: transform, opacity;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* ==================================================
+   PROJECT DETAILS
+================================================== */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+
+  .description {
+    max-width: 640px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #9ca3af;
+  }
+}
+
+/* ==================================================
+   TECH STACK
+================================================== */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+
+  span {
+    padding: 0.45rem 1.05rem;
+    border: 1px solid #4b5563;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: #e5e7eb;
+    white-space: nowrap;
+  }
+}
+
+/* ==================================================
+   PROJECT LINKS
+================================================== */
+.project-links {
+  display: flex;
+  gap: 2.8rem;
+  margin-top: 1.2rem;
+
+  a {
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .live {
+    color: #8fff86;
+  }
+
+  .github {
+    color: #9ca3af;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+/* ==================================================
+   TABLET (>=768px)
+================================================== */
+@media (min-width: 768px) {
+  .project-title {
+    font-size: 4rem;
+  }
+
+  .projects-list {
+    gap: 8rem;
+  }
+
+  .project-preview {
+    height: 360px;
+  }
+
+  .project-info h3 {
+    font-size: 2.8rem;
+  }
+}
+
+/* ==================================================
+   LAPTOP & DESKTOP (>=1024px)
+================================================== */
+@media (min-width: 1024px) {
+  .project-section {
+    padding: 6rem 0;
+
+    .project-title {
+      font-size: 5rem;
+    }
+
+    .project-container {
+      padding: 0 8rem;
+    }
+  }
+
+  .projects-list {
+    gap: 10rem;
+  }
+
+  .project-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 7rem;
+    width: 100%; /* full width, NOT centered */
+  }
+
+  .project-preview {
+    width: 58%;
+    height: 460px;
+  }
+
+  .project-info {
+    width: 42%;
+  }
+
+  /* ZIG-ZAG */
+  .project-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  /* Horizontal flow instead of centering */
+  .project-card:nth-child(odd) {
+    padding-right: 6vw;
+  }
+
+  .project-card:nth-child(even) {
+    padding-left: 6vw;
+  }
+}
+
+/* ==================================================
+   LARGE SCREENS (>=1440px)
+================================================== */
+@media (min-width: 1440px) {
+  .project-preview {
+    height: 400px;
+  }
+
+  .project-info h3 {
+    font-size: 3.2rem;
+  }
+
+  .project-info .description {
+    font-size: 1.15rem;
+  }
+}

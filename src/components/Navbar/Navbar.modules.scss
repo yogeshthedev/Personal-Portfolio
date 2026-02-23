@@ -1,0 +1,240 @@
+.navbar-wrapper {
+  width: 100%;
+  padding: 0 1.5rem;
+
+  .navbar-container {
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .max-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-grow: 1;
+
+      .max-logo {
+        .logo {
+          font-size: 2rem;
+          font-weight: 600;
+          font-family: "Dancing Script", cursive;
+          color: white;
+          
+        }
+      }
+
+      .max-right-items {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+
+        .theme {
+          border-radius: 50%;
+          padding: 0.4rem;
+          cursor: pointer;
+
+          img {
+            width: 24px; // smaller icon
+          }
+
+          &:hover {
+            background-color: rgb(0, 0, 0);
+          }
+        }
+      }
+    }
+
+    .max-hamburger {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      background-color: white;
+      border-radius: 50%;
+      margin-left: 1rem;
+      z-index: 9999;
+      position: sticky;
+      top: 0;
+
+      &.open {
+        background-color: transparent;
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        span {
+          background-color: white;
+        }
+      }
+
+      span {
+        position: absolute;
+        width: 24px;
+        height: 4px;
+        background-color: black;
+        border-radius: 2px;
+        transition: transform 0.3s ease, top 0.3s ease;
+      }
+
+      span:first-child {
+        top: 12px;
+      }
+
+      span:last-child {
+        top: 24px;
+      }
+
+      &.open {
+        span:first-child {
+          top: 50%;
+          transform: rotate(45deg);
+        }
+
+        span:last-child {
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+// Tablet screens
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar-wrapper {
+    padding: 0 2rem;
+
+    .navbar-container {
+      padding-top: 2rem;
+
+      .max-header {
+        .max-logo {
+          .logo {
+            font-size: 2.5rem;
+          }
+        }
+
+        .max-right-items {
+          gap: 1rem;
+
+          .theme {
+            padding: 0.5rem;
+
+            img {
+              width: 26px;
+            }
+          }
+
+          .say-hello-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+
+            span {
+              font-size: 1.3rem;
+              display: inline-block;
+            }
+
+            img {
+              width: 1.1rem;
+              height: 1.1rem;
+            }
+          }
+        }
+      }
+
+      .max-hamburger {
+        width: 45px;
+        height: 45px;
+
+        &.open {
+          top: 2rem;
+          right: 2rem;
+        }
+        span {
+          width: 28px;
+          height: 4.5px;
+        }
+
+        span:first-child {
+          top: 14px;
+        }
+
+        span:last-child {
+          top: 28px;
+        }
+      }
+    }
+  }
+}
+
+// Desktop screens
+@media (min-width: 1024px) {
+  .navbar-wrapper {
+    padding: 0 3rem;
+
+    .navbar-container {
+      padding-top: 2.5rem;
+
+      .max-header {
+        .max-logo {
+          .logo {
+            font-size: 3rem;
+          }
+        }
+
+        .max-right-items {
+          gap: 1.2rem;
+
+          .theme {
+            padding: 0.6rem;
+
+            img {
+              width: 30px;
+            }
+          }
+
+          .say-hello-btn {
+            padding: 0.6rem 2rem;
+            border-radius: 2.4rem;
+
+            span {
+              font-size: 1.4rem;
+              display: inline-block;
+            }
+
+            img {
+              width: 1.2rem;
+              height: 1.2rem;
+            }
+          }
+        }
+      }
+
+      .max-hamburger {
+        width: 50px;
+        height: 50px;
+
+        &.open {
+          top: 3rem;
+          right: 3rem;
+        }
+
+        span {
+          width: 30px;
+          height: 5px;
+        }
+
+        span:first-child {
+          top: 16px;
+        }
+
+        span:last-child {
+          top: 28px;
+        }
+      }
+    }
+  }
+}

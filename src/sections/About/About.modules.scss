@@ -1,0 +1,150 @@
+.about-section {
+  padding: 2rem 2rem;
+
+  .about-title-container {
+    .about-title {
+      font-size: 2rem;
+    }
+  }
+
+  .about-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .about-image {
+      padding-right: 0.4rem;
+      padding-bottom: 0.4rem;
+      box-shadow: 2px 2px 10px white;
+      order: 1;
+    }
+    .about-details {
+      color: #333;
+      order: 0;
+
+      .about-heading {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #494848;
+      }
+
+      .about-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: #6b6a6a;
+      }
+    }
+  }
+}
+.about-section {
+  padding: 2rem 2rem;
+
+  .about-title-container {
+    .about-title {
+      font-size: 2rem;
+    }
+  }
+
+  .about-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .about-image {
+      order: 1;
+      padding-right: 0.4rem;
+      padding-bottom: 0.4rem;
+      box-shadow: 2px 2px 10px white;
+      border-radius: 6px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+
+    .about-details {
+      color: #333;
+      order: 0;
+      .about-heading {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #494848;
+      }
+
+      .about-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: #6b6a6a;
+      }
+    }
+  }
+}
+
+/* -------- Tablet (>=768px) -------- */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 3rem 2rem;
+
+    .about-title-container .about-title {
+      font-size: 5rem;
+    }
+
+    .about-container {
+      flex-direction: row;
+
+      gap: 3rem;
+
+      .about-image {
+        flex: 1;
+        order: 0;
+      }
+
+      .about-details {
+        flex: 1;
+        order: 1;
+
+        .about-heading {
+          font-size: 2rem;
+        }
+
+        .about-description {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+/* -------- Desktop (>=1024px) -------- */
+@media (min-width: 1024px) {
+  .about-section {
+    padding: 4rem 4rem;
+
+    .about-title-container .about-title {
+      font-size: 7rem;
+    }
+
+    .about-container {
+      gap: 10rem;
+
+      .about-details {
+        .about-heading {
+          font-size: 2.6rem;
+        }
+
+        .about-description {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
