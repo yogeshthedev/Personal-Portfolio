@@ -1,0 +1,108 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build all apps
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          apps=(
+            Display-cards
+            Expence-tracker
+            Feedback-form
+            Movie-explorer
+            Notes-app
+            Recipe-finder
+            Todo-List
+            YWave
+            contact-manager
+            user-directory
+          )
+
+          rm -rf site
+          mkdir -p site
+          touch site/.nojekyll
+
+          # Landing page
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html>
+            <head><meta charset="UTF-8"><title>React Projects</title></head>
+            <body><h1>React Projects</h1><ul>
+          HTML
+
+          for app in "${apps[@]}"; do
+            echo "<li><a href=\"./${app}/\">${app}</a></li>" >> site/index.html
+          done
+
+          echo "</ul></body></html>" >> site/index.html
+
+          for app in "${apps[@]}"; do
+            echo "Building $app"
+            pushd "$app" > /dev/null
+
+            npm install
+            
+            # Set base path for GitHub Pages subdirectory deployment
+            VITE_BASE="/${REPO_NAME}/${app}/" npm run build
+
+            if [ -d "build" ]; then
+              OUT="build"
+            elif [ -d "dist" ]; then
+              OUT="dist"
+            else
+              echo "❌ Build not found for $app"
+              exit 1
+            fi
+
+            popd > /dev/null
+
+            mkdir -p "site/${app}"
+            cp -R "${app}/${OUT}/"* "site/${app}/"
+          done
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
