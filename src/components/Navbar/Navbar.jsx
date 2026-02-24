@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import "./Navbar.modules.scss";
 import Menu from "../Menu/Menu";
 import Button from "../Button/Button";
 const Navbar = () => {
@@ -25,7 +26,7 @@ const Navbar = () => {
 
           <div className="max-right-items">
             <div className="theme">
-              <img src="/sun-theme.svg" />
+              <img src="/sun-theme.svg" alt="Theme icon" loading="lazy" decoding="async" />
             </div>
             <Button
               text="Say Hello"

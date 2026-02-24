@@ -1,5 +1,3 @@
-import "./Contact.modules.scss";
-
 const Contact = () => {
   return (
     <section className="contact-section" id="contact">

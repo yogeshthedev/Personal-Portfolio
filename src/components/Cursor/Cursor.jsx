@@ -1,6 +1,7 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import "./Cursor.modules.scss";
 
 const Cursor = () => {
   const cursorRef = useRef(null);

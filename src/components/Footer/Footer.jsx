@@ -1,5 +1,3 @@
-import "./Footer.modules.scss";
-
 const Footer = () => {
   return (
     <footer className="footer-section">

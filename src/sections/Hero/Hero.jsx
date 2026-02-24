@@ -1,7 +1,6 @@
 
 import MarqueeComponent from "../../components/MarqueComponent/MarqueeComponent";
 import Mountain from "../../components/Mountain-design/Mountain";
-import "./Hero.modules.scss";
 
 const Hero = () => {
   return (
@@ -10,7 +9,13 @@ const Hero = () => {
       <MarqueeComponent />
       <div className="main-section" >
         <div className="center-hero-img">
-          <img src="/hero-img.jpg" alt="Hero Image"></img>
+          <img
+            src="/hero-img.jpg"
+            alt="Hero Image"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          ></img>
 
           <div className="tag">
             <span className="mark-icon"></span>

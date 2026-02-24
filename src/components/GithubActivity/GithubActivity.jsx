@@ -1,7 +1,19 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
-import "./GithubActivity.modules.scss";
 
 const GithubActivity = ({ username = "yogeshthedev" }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div className="github-activity-wrapper">
       <div className="github-activity-header">

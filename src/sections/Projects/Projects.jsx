@@ -1,4 +1,3 @@
-import "./Projects.modules.scss";
 import projects from "../../data/Projects";
 
 const Projects = () => {
@@ -15,7 +14,7 @@ const Projects = () => {
                 className="project-preview project-image"
                 data-live-link={project.liveLink}
               >
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
               </div>
 
               {/* RIGHT: Details */}

@@ -1,6 +1,4 @@
-import "./About.modules.scss";
 import GithubActivity from "../../components/GithubActivity/GithubActivity";
-import { GitHubCalendar } from "react-github-calendar";
 
 const About = () => {
   return (
@@ -10,7 +8,7 @@ const About = () => {
 
         <div className="about-content">
           <div className="about-image">
-            <img src="/hero-img.jpg" alt="Yogesh portrait" />
+            <img src="/hero-img.jpg" alt="Yogesh portrait" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-details">

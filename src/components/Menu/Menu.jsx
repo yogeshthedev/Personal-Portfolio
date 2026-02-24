@@ -1,4 +1,4 @@
-import "./Menu.models.scss";
+"use client";
 
 const Menu = ({ isOpen, setIsOpen }) => {
   const handleScroll = (id) => {

@@ -1,5 +1,3 @@
-import "./Mountain.modules.scss";
-
 const Mountain = () => {
   return (
     <div className="mountain-range">
