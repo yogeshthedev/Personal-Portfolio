@@ -9,8 +9,14 @@ const Navbar = () => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
 
+  const handleContactScroll = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <nav className="navbar-wrapper">
+    <nav className="navbar-wrapper" id="navbar">
       <div className="navbar-container">
         <div className="max-header">
           <div className="max-logo">
@@ -24,7 +30,7 @@ const Navbar = () => {
             <Button
               text="Say Hello"
               icon="/arrow-up-right.svg"
-              onClick={onclick}
+              onClick={handleContactScroll}
             />
           </div>
         </div>

@@ -1,0 +1,137 @@
+.contact-section {
+  padding: 5rem 0 6rem;
+  color: #ffffff;
+
+  .contact-inner {
+    padding: 0 4vw;
+  }
+
+  .contact-title {
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-bottom: 2.8rem;
+    line-height: 1;
+  }
+
+  .contact-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #f3f4f6;
+  }
+
+  .contact-description {
+    color: #9ca3af;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 700px;
+  }
+
+  .contact-cta {
+    margin-top: 0.5rem;
+    width: fit-content;
+    color: #8fff86;
+    border: 1px solid #4b5563;
+    border-radius: 999px;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: #8fff86;
+      text-decoration: none;
+    }
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .contact-card {
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    padding: 1rem 1.1rem;
+    background: #161616;
+    text-decoration: none;
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+
+    .label {
+      color: #9ca3af;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .value {
+      color: #f3f4f6;
+      font-size: 1rem;
+      word-break: break-word;
+    }
+
+    &:hover {
+      border-color: #8fff86;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-section {
+    .contact-title {
+      font-size: 4rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .contact-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-section {
+    padding: 6rem 0 7rem;
+
+    .contact-inner {
+      padding: 0 8rem;
+    }
+
+    .contact-title {
+      font-size: 5rem;
+      margin-bottom: 4rem;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-heading {
+      font-size: 2.5rem;
+      max-width: 600px;
+    }
+
+    .contact-cards {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+}

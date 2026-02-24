@@ -14,18 +14,19 @@ const About = () => {
           </div>
 
           <div className="about-details">
-            <p className="about-heading">Frontend Developer crafting clean web experiences</p>
+            <p className="about-heading">Full-Stack Web Developer building complete digital products</p>
 
             <p className="about-description">
-              I’m <strong>Yogesh Meena</strong>, a frontend developer focused on building modern,
-              responsive interfaces with strong attention to detail. I enjoy creating smooth
-              interactions, reusable components, and user-friendly products that feel simple and fast.
+              I’m <strong>Yogesh Meena</strong>, a web developer who works across both frontend and
+              backend. I build modern user interfaces with React and also develop server-side
+              applications using Node.js, Express.js, and MongoDB to deliver complete, scalable web
+              solutions.
             </p>
 
             <div className="about-tray">
               <div className="tray-item">
                 <p className="title">Experience</p>
-                <p className="value">Frontend Projects</p>
+                <p className="value">Full-Stack Projects</p>
               </div>
               <div className="tray-item">
                 <p className="title">Location</p>
@@ -33,16 +34,16 @@ const About = () => {
               </div>
               <div className="tray-item">
                 <p className="title">Focus</p>
-                <p className="value">UI, Motion, React</p>
+                <p className="value">React, Node.js, APIs</p>
               </div>
             </div>
 
             <div className="about-skills">
               <span>React</span>
               <span>JavaScript</span>
-              <span>SCSS</span>
-              <span>Responsive Design</span>
-              <span>GSAP</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>MongoDB</span>
             </div>
           </div>
         </div>

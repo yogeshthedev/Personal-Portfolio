@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="info-container">
           <div className="info-text">
             <p>Hey! I'm Yogesh Meena.</p>
-            <p>I'm a Frontend Developer</p>
+            <p>I'm a Full-Stack Web Developer</p>
             <p>based in Kota, India.</p>
           </div>
 
@@ -30,18 +30,19 @@ const Hero = () => {
             <span className="tag">CSS</span>
             <span className="tag">JavaScript</span>
             <span className="tag">React</span>
-            <span className="tag">GSAP</span>
-            <span className="tag">SCSS</span>
+            <span className="tag">Node.js</span>
+            <span className="tag">Express.js</span>
+            <span className="tag">MongoDB</span>
           </div>
         </div>
 
         <div className="skill-tag">
-          <span className="tag">Interactive Design</span>
-          <span className="tag">UI/UX</span>
-          <span className="tag">Web Experience</span>
+          <span className="tag">Frontend Development</span>
+          <span className="tag">Backend Development</span>
+          <span className="tag">REST APIs</span>
+          <span className="tag">Database Design</span>
           <span className="tag">Responsive Design</span>
-          <span className="tag">Branding</span>
-          <span className="tag">Portfolio</span>
+          <span className="tag">Clean Architecture</span>
         </div>
       </div>
 

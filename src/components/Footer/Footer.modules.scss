@@ -1,0 +1,139 @@
+.footer-section {
+  padding: 3rem 0 2rem;
+  border-top: 1px solid #374151;
+  background: #121212;
+  color: #ffffff;
+
+  .footer-inner {
+    padding: 0 4vw;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-brand {
+    .footer-kicker {
+      color: #9ca3af;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-copy {
+      color: #9ca3af;
+      max-width: 620px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+
+    .col-title {
+      color: #f3f4f6;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    a {
+      color: #9ca3af;
+      width: fit-content;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #8fff86;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    p,
+    a {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    a:hover {
+      color: #8fff86;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-section {
+    .footer-brand h2 {
+      font-size: 3.3rem;
+    }
+
+    .footer-columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 520px;
+    }
+
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-section {
+    padding: 4rem 0 2rem;
+
+    .footer-inner {
+      padding: 0 8rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 2rem;
+      align-items: start;
+      padding-bottom: 2.5rem;
+    }
+
+    .footer-brand h2 {
+      font-size: 4.3rem;
+    }
+
+    .footer-columns {
+      max-width: 100%;
+      justify-self: end;
+      width: 100%;
+    }
+  }
+}
