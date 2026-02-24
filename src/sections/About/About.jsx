@@ -1,35 +1,55 @@
 import "./About.modules.scss";
+import GithubActivity from "../../components/GithubActivity/GithubActivity";
+import { GitHubCalendar } from "react-github-calendar";
+
 const About = () => {
   return (
-    <div className="about-section" id="about">
-      <div className="about-title-container">
-        <p className="about-title">About Me</p>
-      </div>
-      <div className="about-container">
-        <div className="about-image">
-          <img src="/hero-img.jpg" />
-        </div>
+    <section className="about-section" id="about">
+      <div className="about-inner">
+        <h2 className="about-title">About</h2>
 
-        <div className="about-details">
-          <p className="about-heading">Hello There</p>
-
-          <p className="about-description">
-            I’m <strong>Yogesh</strong> — a passionate Frontend Developer and
-            fresher, skilled in HTML, CSS, JavaScript, and React. I enjoy
-            building responsive, user-friendly web applications and look forward
-            to learning and contributing to real-world projects.
-          </p>
-          <div className="about-tray">
-            <div className="tray1">
-              <p className="title"></p>
-              <p className="value"></p>
-            </div>
+        <div className="about-content">
+          <div className="about-image">
+            <img src="/hero-img.jpg" alt="Yogesh portrait" />
           </div>
 
+          <div className="about-details">
+            <p className="about-heading">Frontend Developer crafting clean web experiences</p>
 
+            <p className="about-description">
+              I’m <strong>Yogesh Meena</strong>, a frontend developer focused on building modern,
+              responsive interfaces with strong attention to detail. I enjoy creating smooth
+              interactions, reusable components, and user-friendly products that feel simple and fast.
+            </p>
+
+            <div className="about-tray">
+              <div className="tray-item">
+                <p className="title">Experience</p>
+                <p className="value">Frontend Projects</p>
+              </div>
+              <div className="tray-item">
+                <p className="title">Location</p>
+                <p className="value">Kota, India</p>
+              </div>
+              <div className="tray-item">
+                <p className="title">Focus</p>
+                <p className="value">UI, Motion, React</p>
+              </div>
+            </div>
+
+            <div className="about-skills">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>SCSS</span>
+              <span>Responsive Design</span>
+              <span>GSAP</span>
+            </div>
+          </div>
         </div>
+
+        <GithubActivity username="yogeshthedev" />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,0 +1,81 @@
+.github-activity-wrapper {
+  margin-top: 4rem;
+
+  .github-activity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    a {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .github-calendar-card {
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    padding: 1rem;
+   
+    background: #161616;
+    overflow-x: auto;
+
+    svg {
+      width: 100%;
+      min-width: 620px;
+      height: auto;
+    }
+    .githubcalender{
+        width: 100%;
+    }
+
+    /* Hide footer completely (count + legend) */
+    .react-activity-calendar__footer {
+      font-size: 1.2rem;
+    }
+
+    /* Safety: hide legend if footer styles change in future */
+    .react-activity-calendar__legend-colors {
+      display: none !important;
+    }
+
+    
+  }
+}
+
+@media (min-width: 768px) {
+  .github-activity-wrapper {
+    margin-top: 5rem;
+
+    .github-activity-header h3 {
+      font-size: 2rem;
+    }
+
+    .github-calendar-card {
+      padding: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .github-activity-wrapper {
+    .github-calendar-card {
+      padding: 1.4rem;
+    }
+  }
+}
