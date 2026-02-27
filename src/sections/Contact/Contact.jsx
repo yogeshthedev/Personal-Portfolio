@@ -25,7 +25,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/yogesh-meena-1aa222255/"
               target="_blank"
               rel="noreferrer"
               className="contact-card"
