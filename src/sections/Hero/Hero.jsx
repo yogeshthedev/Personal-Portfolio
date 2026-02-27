@@ -25,8 +25,8 @@ const Hero = () => {
 
         <div className="info-container">
           <div className="info-text">
-            <p>Hey! I'm Yogesh Meena.</p>
-            <p>I'm a Full-Stack Web Developer</p>
+            <p>Hey! I&apos;m Yogesh Meena.</p>
+            <p>I&apos;m a Full-Stack Web Developer</p>
             <p>based in Kota, India.</p>
           </div>
 
