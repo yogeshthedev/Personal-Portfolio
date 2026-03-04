@@ -55,19 +55,26 @@
       cursor: pointer;
       position: relative;
       background-color: white;
+      border: 1.5px solid transparent;
       border-radius: 50%;
       margin-left: 1rem;
-      z-index: 9999;
+      z-index: 11000;
       position: sticky;
       top: 0;
+      transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 
       &.open {
-        background-color: transparent;
+        background-color: #060010;
+        border-color: #f3f4f6;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 
         top: 1.5rem;
         right: 1.5rem;
         span {
-          background-color: white;
+          background-color: #f3f4f6;
         }
       }
 
