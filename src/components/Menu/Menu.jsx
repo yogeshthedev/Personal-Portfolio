@@ -114,7 +114,7 @@ function MenuItem({
       if (!marqueeInnerRef.current) return;
 
       const marqueeContent = marqueeInnerRef.current.querySelector(
-        ".flowing-menu__marquee-part"
+        ".flowing-menu__marquee-part",
       );
       if (!marqueeContent) return;
 
@@ -139,7 +139,7 @@ function MenuItem({
       if (!marqueeInnerRef.current) return;
 
       const marqueeContent = marqueeInnerRef.current.querySelector(
-        ".flowing-menu__marquee-part"
+        ".flowing-menu__marquee-part",
       );
       if (!marqueeContent) return;
 
@@ -169,7 +169,8 @@ function MenuItem({
   }, [text, image, repetitions, speed]);
 
   const handleMouseEnter = (event) => {
-    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
+    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current)
+      return;
 
     const rect = itemRef.current.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -184,7 +185,8 @@ function MenuItem({
   };
 
   const handleMouseLeave = (event) => {
-    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
+    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current)
+      return;
 
     const rect = itemRef.current.getBoundingClientRect();
     const x = event.clientX - rect.left;
