@@ -21,7 +21,7 @@ body {
   height: 100%;
   background-color: #121212; /* Dark background */
   color: #e0e0e0; /* Light text */
-  font-family: "Funnel Display", sans-serif;
+  font-family: var(--font-funnel-display), sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
   cursor: none;

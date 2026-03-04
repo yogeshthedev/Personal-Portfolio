@@ -7,22 +7,22 @@ const menuItems = [
   {
     link: "#home",
     text: "Home",
-    image: "/hero-img.jpg",
+    image: "/hero-img.webp",
   },
   {
     link: "#projects",
     text: "Projects",
-    image: "/hero-img.jpg",
+    image: "/hero-img.webp",
   },
   {
     link: "#about",
     text: "About",
-    image: "/hero-img.jpg",
+    image: "/hero-img.webp",
   },
   {
     link: "#contact",
     text: "Contact",
-    image: "/hero-img.jpg",
+    image: "/hero-img.webp",
   },
 ];
 

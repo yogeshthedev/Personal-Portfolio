@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="main-section" >
         <div className="center-hero-img">
           <img
-            src="/hero-img.jpg"
+            src="/hero-img.webp"
             alt="Hero Image"
             loading="eager"
             fetchPriority="high"

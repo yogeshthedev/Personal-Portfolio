@@ -8,7 +8,7 @@ const About = () => {
 
         <div className="about-content">
           <div className="about-image">
-            <img src="/hero-img.jpg" alt="Yogesh portrait" loading="lazy" decoding="async" />
+            <img src="/hero-img.webp" alt="Yogesh portrait" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-details">

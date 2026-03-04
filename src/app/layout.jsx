@@ -1,4 +1,18 @@
 import "./globals.scss";
+import { Dancing_Script, Funnel_Display } from "next/font/google";
+
+const funnelDisplay = Funnel_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-funnel-display",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dancing-script",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata = {
   title: "Yogesh Portfolio",
@@ -8,15 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>{children}</body>
+      <body className={`${funnelDisplay.variable} ${dancingScript.variable}`}>{children}</body>
     </html>
   );
 }
