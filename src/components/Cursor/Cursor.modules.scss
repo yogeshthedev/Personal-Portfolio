@@ -16,10 +16,7 @@
   opacity: 0;
 
   backdrop-filter: blur(3px);
-  box-shadow:
-    0 0 0 1px rgba(253, 116, 50, 0.35),
-    0 0 18px rgba(253, 116, 50, 0.45),
-    0 8px 20px rgba(0, 0, 0, 0.35);
+ 
 
   display: flex;
   align-items: center;
@@ -45,7 +42,7 @@
   height: 7px;
   border-radius: 50%;
   background-color: #f3f4f6;
-  box-shadow: 0 0 10px rgba(253, 116, 50, 0.85);
+
   transition:
     transform 0.2s ease,
     opacity 0.2s ease,
@@ -57,10 +54,7 @@
   height: 42px;
   border-color: #ffffff;
   background-color: rgba(253, 116, 50, 0.14);
-  box-shadow:
-    0 0 0 2px rgba(253, 116, 50, 0.3),
-    0 0 24px rgba(253, 116, 50, 0.45),
-    0 10px 24px rgba(0, 0, 0, 0.35);
+ 
 }
 
 .custom-cursor.cursor-link::after {
@@ -75,10 +69,7 @@
   background-color: rgba(18, 18, 18, 0.94);
   border: 1.5px solid #f3f4f6;
   color: #f3f4f6;
-  box-shadow:
-    0 0 0 1px rgba(253, 116, 50, 0.45),
-    0 0 28px rgba(253, 116, 50, 0.3),
-    0 16px 34px rgba(0, 0, 0, 0.45);
+ 
 }
 
 .custom-cursor.cursor-project::after {

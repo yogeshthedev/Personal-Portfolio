@@ -1,6 +1,42 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const Footer = () => {
+  const footerRef = useRef(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const footerElement = footerRef.current;
+    if (!footerElement) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowBackToTop(entry.isIntersecting);
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(footerElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const handleBackToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="footer-section">
+    <footer className="footer-section" ref={footerRef}>
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-brand">
@@ -33,11 +69,24 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p>© 2026 Yogesh Meena</p>
-          <a href="#navbar">Back to top ↑</a>
-        </div>
+      
       </div>
+
+      <button
+        type="button"
+        className={`back-to-top-floating ${showBackToTop ? "visible" : ""}`}
+        onClick={handleBackToTop}
+        aria-label="Back to top"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+          className="back-to-top-icon"
+        >
+          <path d="M12 5l-6 6h4v8h4v-8h4z" fill="currentColor" />
+        </svg>
+      </button>
     </footer>
   );
 };
