@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #05050a;
+  --s1: #0c0c14;
+  --s2: #111120;
+  --card: #0f0f1c;
+  --border: rgba(255, 255, 255, 0.07);
+  --bhi: rgba(255, 255, 255, 0.14);
+  --accent: #e8512a;
+  --alo: rgba(232, 81, 42, 0.1);
+  --amd: rgba(232, 81, 42, 0.28);
+  --a2: #7c3aed;
+  --green: #22c55e;
+  --text: #eeebe4;
+  --sub: #8e8ba0;
+  --faint: #35324a;
+  --fh: 'Outfit', sans-serif;
+  --fs: 'Playfair Display', serif;
+  --fm: 'JetBrains Mono', monospace;
+  --r1: 6px;
+  --r2: 12px;
+  --r3: 20px;
+  --max: 1280px;
+  --pad: 64px;
+  --nav-h: 70px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--fh);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+section {
+  padding: 90px 0;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bhi), transparent);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fm);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-h {
+  font-family: var(--fh);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 0.95;
+  margin-bottom: 48px;
+}
+
+.section-h em {
+  font-family: var(--fs);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.pill {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  color: var(--sub);
+  letter-spacing: 0.05em;
+  font-family: var(--fm);
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.pill.hi {
+  border-color: var(--amd);
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.35;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes mq {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes hero-line {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.fu {
+  opacity: 0;
+  transform: translateY(32px);
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.d1 {
+  animation-delay: 0.08s;
+}
+
+.d2 {
+  animation-delay: 0.18s;
+}
+
+.d3 {
+  animation-delay: 0.3s;
+}
+
+.d4 {
+  animation-delay: 0.42s;
+}
+
+.d5 {
+  animation-delay: 0.56s;
+}
+
+.d6 {
+  animation-delay: 0.72s;
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --pad: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --pad: 28px;
+    --nav-h: 60px;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --pad: 20px;
+    --nav-h: 56px;
+  }
+
+  section {
+    padding: 52px 0;
+  }
+
+  .section-h {
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --pad: 80px;
+  }
+}
