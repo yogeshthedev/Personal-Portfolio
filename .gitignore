@@ -13,3 +13,12 @@ coverage/
 *.bak
 *.tmp
 *.swp
+*.swo
+*.zip
+*.tar.gz
+*.tgz
+.next/
+out/
+public/static/
+*.map
+*.tsbuildinfo

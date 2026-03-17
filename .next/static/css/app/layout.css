@@ -27,6 +27,7 @@
   --max: 1280px;
   --pad: 64px;
   --nav-h: 70px;
+  --section-space: 90px;
 }
 
 *,
@@ -61,13 +62,13 @@ body::before {
 }
 
 .container {
-  max-width: var(--max);
+  width: min(100%, var(--max));
   margin: 0 auto;
-  padding: 0 var(--pad);
+  padding-inline: var(--pad);
 }
 
 section {
-  padding: 90px 0;
+  padding: var(--section-space) 0;
 }
 
 .divider {
@@ -231,31 +232,27 @@ section {
   animation-delay: 0.72s;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1024px) {
   :root {
-    --pad: 40px;
+    --pad: 32px;
+    --nav-h: 64px;
+    --section-space: 76px;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --pad: 28px;
+    --pad: 24px;
     --nav-h: 60px;
-  }
-
-  section {
-    padding: 64px 0;
+    --section-space: 64px;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --pad: 20px;
+    --pad: 18px;
     --nav-h: 56px;
-  }
-
-  section {
-    padding: 52px 0;
+    --section-space: 52px;
   }
 
   .section-h {
@@ -265,13 +262,22 @@ section {
 
 @media (min-width: 1400px) {
   :root {
-    --pad: 80px;
+    --pad: 88px;
+    --section-space: 96px;
   }
 }
 
-/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Cursor.css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************/
+@media (min-width: 1600px) {
+  :root {
+    --max: 1480px;
+    --pad: 96px;
+    --section-space: 108px;
+  }
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/cursor/cursor.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
 .has-cursor {
   cursor: none;
 }
@@ -317,9 +323,9 @@ section {
   }
 }
 
-/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Navbar.css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/navbar/navbar.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
 nav.main-nav {
   position: fixed;
   top: 0;
@@ -559,7 +565,11 @@ nav.main-nav.scrolled {
   border-color: var(--bhi);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  nav.main-nav {
+    grid-template-columns: 1fr auto;
+  }
+
   .nav-pill {
     display: none;
   }
@@ -573,15 +583,31 @@ nav.main-nav.scrolled {
   }
 }
 
+@media (max-width: 768px) {
+  .nav-drawer a {
+    font-size: clamp(26px, 8.5vw, 40px);
+  }
+}
+
 @media (max-width: 480px) {
   .nav-logo {
     font-size: 18px;
   }
 }
 
-/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Hero.css ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************/
+@media (min-width: 1600px) {
+  .nav-logo {
+    font-size: 22px;
+  }
+
+  .nav-pill a {
+    padding: 8px 20px;
+  }
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/hero/hero.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
 .hero {
   min-height: 100vh;
   position: relative;
@@ -646,6 +672,10 @@ nav.main-nav.scrolled {
   grid-gap: 60px;
   gap: 60px;
   width: 100%;
+}
+
+.hero-left {
+  max-width: 720px;
 }
 
 .hero-eyebrow {
@@ -1089,6 +1119,10 @@ nav.main-nav.scrolled {
     gap: 40px;
   }
 
+  .hero-left {
+    max-width: 640px;
+  }
+
   .av-card {
     width: 300px;
     height: 370px;
@@ -1118,19 +1152,53 @@ nav.main-nav.scrolled {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero {
-    padding-top: calc(var(--nav-h) + 32px);
-    padding-bottom: 0;
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 36px);
   }
 
   .hero-body {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
+  }
+
+  .hero-left {
+    max-width: 100%;
   }
 
   .hero-right {
     display: none;
+  }
+
+  .hero-h {
+    font-size: clamp(48px, 9vw, 82px);
+    letter-spacing: -3px;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 56px;
+  }
+
+  .hero-eyebrow {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--nav-h) + 26px);
+    padding-bottom: 0;
+  }
+
+  .hero-body {
+    gap: 28px;
   }
 
   .hero-h {
@@ -1165,6 +1233,7 @@ nav.main-nav.scrolled {
 
   .hero-role {
     font-size: 11px;
+    letter-spacing: 0.12em;
   }
 
   .hero-desc {
@@ -1193,7 +1262,7 @@ nav.main-nav.scrolled {
   }
 
   .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1px;
   }
 
@@ -1228,9 +1297,35 @@ nav.main-nav.scrolled {
   }
 }
 
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Marquee.css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
+@media (min-width: 1600px) {
+  .hero-body {
+    grid-template-columns: minmax(0, 1fr) 560px;
+    gap: 84px;
+  }
+
+  .av-card {
+    width: 420px;
+    height: 500px;
+  }
+
+  .orbit-ring {
+    width: 640px;
+    height: 640px;
+  }
+
+  .orbit-ring-2 {
+    width: 520px;
+    height: 520px;
+  }
+
+  .hero-stats {
+    margin-top: 96px;
+  }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/marquee/marquee.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
 .marquee-bar {
   background: var(--s1);
   border-top: 1px solid var(--border);
@@ -1265,6 +1360,13 @@ nav.main-nav.scrolled {
   color: var(--accent);
 }
 
+@media (max-width: 1024px) {
+  .marquee-track {
+    gap: 30px;
+    animation-duration: 20s;
+  }
+}
+
 @media (max-width: 768px) {
   .marquee-track {
     gap: 28px;
@@ -1276,9 +1378,19 @@ nav.main-nav.scrolled {
   }
 }
 
-/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Projects.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************/
+@media (min-width: 1600px) {
+  .marquee-track {
+    gap: 42px;
+  }
+
+  .mq-item {
+    font-size: 13px;
+  }
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/projects/projects.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
 #projects {
   padding-bottom: 0;
 }
@@ -1787,13 +1899,13 @@ nav.main-nav.scrolled {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .stack-slot {
     position: relative !important;
     top: auto !important;
     height: auto !important;
     padding: 0 var(--pad);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .stack-spacer {
@@ -1807,7 +1919,32 @@ nav.main-nav.scrolled {
   .proj-card {
     grid-template-columns: 1fr;
     min-height: auto;
-    border-radius: 16px;
+    border-radius: 18px;
+  }
+
+  .pc-img {
+    min-height: 230px;
+    max-height: 280px;
+  }
+
+  .mock-browser {
+    width: 90%;
+    max-width: 460px;
+  }
+
+  .pc-info {
+    padding: 24px 28px;
+    gap: 14px;
+  }
+
+  .pc-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack-slot {
+    margin-bottom: 20px;
   }
 
   .pc-img {
@@ -1818,10 +1955,6 @@ nav.main-nav.scrolled {
   .pc-info {
     padding: 22px 24px;
     gap: 13px;
-  }
-
-  .pc-desc {
-    max-width: 100%;
   }
 }
 
@@ -1871,9 +2004,24 @@ nav.main-nav.scrolled {
     min-height: 500px;
   }
 }
-/*!******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/About.css ***!
-  \******************************************************************************************************************************************************************************************************************************************************************/
+
+@media (min-width: 1600px) {
+  .proj-card {
+    max-width: 1320px;
+    min-height: 560px;
+  }
+
+  .pc-img {
+    min-height: 560px;
+  }
+
+  .pc-info {
+    padding: 42px 50px;
+  }
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/about/about.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
 .about-grid {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -2056,6 +2204,8 @@ nav.main-nav.scrolled {
 }
 
 .gh-block {
+  --gh-cell-size: 11px;
+  --gh-cell-gap: 3px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--r3);
@@ -2097,22 +2247,25 @@ nav.main-nav.scrolled {
 .contrib-outer {
   width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
   padding-bottom: 4px;
 }
 
 .contrib-grid {
   display: grid;
-  grid-template-columns: repeat(52, 11px);
-  grid-template-rows: repeat(7, 11px);
-  grid-gap: 3px;
-  gap: 3px;
+  grid-template-columns: repeat(52, var(--gh-cell-size));
+  grid-template-rows: repeat(7, var(--gh-cell-size));
+  grid-gap: var(--gh-cell-gap);
+  gap: var(--gh-cell-gap);
   width: max-content;
   grid-auto-flow: column;
 }
 
 .cc {
-  width: 11px;
-  height: 11px;
+  width: var(--gh-cell-size);
+  height: var(--gh-cell-size);
   border-radius: 2px;
 }
 
@@ -2133,7 +2286,7 @@ nav.main-nav.scrolled {
 
 .gh-legend-cells {
   display: flex;
-  gap: 3px;
+  gap: var(--gh-cell-gap);
 }
 
 @media (max-width: 1199px) {
@@ -2143,10 +2296,10 @@ nav.main-nav.scrolled {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 30px;
   }
 
   .about-photo {
@@ -2155,11 +2308,29 @@ nav.main-nav.scrolled {
 
   .about-photo-frame {
     aspect-ratio: 16/9;
+    max-height: 260px;
+  }
+
+  .gh-block {
+    --gh-cell-size: 8px;
+    --gh-cell-gap: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-photo-frame {
     max-height: 240px;
   }
 
   .stats-row {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gh-block {
+    --gh-cell-size: 6px;
+    --gh-cell-gap: 2px;
+    padding: 20px;
   }
 }
 
@@ -2185,6 +2356,37 @@ nav.main-nav.scrolled {
   .stat-n {
     font-size: 26px;
   }
+
+  .gh-block {
+    --gh-cell-size: 4px;
+    --gh-cell-gap: 1px;
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .gh-head {
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .gh-title {
+    font-size: 14px;
+  }
+
+  .gh-link {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  .gh-sub {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+  .gh-legend {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -2194,9 +2396,20 @@ nav.main-nav.scrolled {
   }
 }
 
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Contact.css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
+@media (min-width: 1600px) {
+  .about-grid {
+    grid-template-columns: 360px 1fr;
+    gap: 78px;
+  }
+
+  .gh-block {
+    padding: 26px 28px;
+  }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/contact/contact.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2343,10 +2556,16 @@ nav.main-nav.scrolled {
   box-shadow: 0 8px 28px rgba(232, 81, 42, 0.45);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    gap: 40px;
   }
 }
 
@@ -2368,9 +2587,19 @@ nav.main-nav.scrolled {
   }
 }
 
-/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Footer.css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************/
+@media (min-width: 1600px) {
+  .contact-grid {
+    gap: 96px;
+  }
+
+  .contact-desc {
+    max-width: 640px;
+  }
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/footer/footer.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
 footer {
   padding: 36px var(--pad);
   border-top: 1px solid var(--border);
@@ -2426,6 +2655,12 @@ footer {
   color: var(--text);
 }
 
+@media (max-width: 1024px) {
+  footer {
+    gap: 12px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   footer {
     justify-content: center;
@@ -2442,6 +2677,12 @@ footer {
 @media (max-width: 480px) {
   footer {
     padding: 24px var(--pad);
+  }
+}
+
+@media (min-width: 1600px) {
+  footer {
+    padding: 40px var(--pad);
   }
 }
 

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import '../components/Cursor.css'
-import '../components/Navbar.css'
-import '../components/Hero.css'
-import '../components/Marquee.css'
-import '../components/Projects.css'
-import '../components/About.css'
-import '../components/Contact.css'
-import '../components/Footer.css'
+import '../components/cursor/cursor.css'
+import '../components/navbar/navbar.css'
+import '../components/hero/hero.css'
+import '../components/marquee/marquee.css'
+import '../components/projects/projects.css'
+import '../components/about/about.css'
+import '../components/contact/contact.css'
+import '../components/footer/footer.css'
 
 export const metadata: Metadata = {
   title: 'Yogesh Meena — Full-Stack Developer',

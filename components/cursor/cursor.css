@@ -1,0 +1,44 @@
+.has-cursor {
+  cursor: none;
+}
+
+#cur,
+#curR {
+  display: none;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.has-cursor #cur {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s, width 0.2s, height 0.2s;
+}
+
+.has-cursor #curR {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(232, 81, 42, 0.4);
+  border-radius: 50%;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .has-cursor {
+    cursor: auto;
+  }
+
+  #cur,
+  #curR {
+    display: none !important;
+  }
+}

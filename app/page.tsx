@@ -1,11 +1,11 @@
-import Cursor from '@/components/Cursor'
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import Marquee from '@/components/Marquee'
-import Projects from '@/components/Projects'
-import About from '@/components/About'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
+import Cursor from '@/components/cursor/cursor'
+import Navbar from '@/components/navbar/navbar'
+import Hero from '@/components/hero/hero'
+import Marquee from '@/components/marquee/marquee'
+import Projects from '@/components/projects/projects'
+import About from '@/components/about/about'
+import Contact from '@/components/contact/contact'
+import Footer from '@/components/footer/footer'
 
 export default function Home() {
   return (

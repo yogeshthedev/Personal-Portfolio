@@ -24,6 +24,7 @@
   --max: 1280px;
   --pad: 64px;
   --nav-h: 70px;
+  --section-space: 90px;
 }
 
 *,
@@ -58,13 +59,13 @@ body::before {
 }
 
 .container {
-  max-width: var(--max);
+  width: min(100%, var(--max));
   margin: 0 auto;
-  padding: 0 var(--pad);
+  padding-inline: var(--pad);
 }
 
 section {
-  padding: 90px 0;
+  padding: var(--section-space) 0;
 }
 
 .divider {
@@ -228,31 +229,27 @@ section {
   animation-delay: 0.72s;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1024px) {
   :root {
-    --pad: 40px;
+    --pad: 32px;
+    --nav-h: 64px;
+    --section-space: 76px;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --pad: 28px;
+    --pad: 24px;
     --nav-h: 60px;
-  }
-
-  section {
-    padding: 64px 0;
+    --section-space: 64px;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --pad: 20px;
+    --pad: 18px;
     --nav-h: 56px;
-  }
-
-  section {
-    padding: 52px 0;
+    --section-space: 52px;
   }
 
   .section-h {
@@ -262,6 +259,15 @@ section {
 
 @media (min-width: 1400px) {
   :root {
-    --pad: 80px;
+    --pad: 88px;
+    --section-space: 96px;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --max: 1480px;
+    --pad: 96px;
+    --section-space: 108px;
   }
 }

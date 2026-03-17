@@ -1,0 +1,380 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.about-photo {
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+
+.about-photo-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: var(--r3);
+  overflow: hidden;
+  border: 1px solid var(--bhi);
+  background: radial-gradient(ellipse at 50% 20%, rgba(232, 81, 42, 0.12) 0%, transparent 65%), #0e0b14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.about-photo-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--card), transparent);
+}
+
+.about-photo-placeholder {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-photo-emoji {
+  font-size: 64px;
+}
+
+.about-photo-caption {
+  font-family: var(--fm);
+  font-size: 10px;
+  color: var(--faint);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.loc-chip {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loc-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+.loc-text strong {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.loc-text span {
+  color: var(--sub);
+  font-size: 11px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about-bio h3 {
+  font-family: var(--fh);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.about-bio h3 em {
+  font-family: var(--fs);
+  font-style: italic;
+  color: var(--accent);
+}
+
+.about-bio p {
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 1.9;
+  margin-bottom: 10px;
+}
+
+.about-bio p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 18px 20px;
+  transition: border-color 0.2s;
+}
+
+.stat-card:hover {
+  border-color: var(--bhi);
+}
+
+.stat-n {
+  font-family: var(--fh);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+.stat-n b {
+  color: var(--accent);
+}
+
+.stat-l {
+  font-family: var(--fm);
+  font-size: 10px;
+  color: var(--sub);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.about-div {
+  height: 1px;
+  background: var(--border);
+}
+
+.stack-label {
+  font-family: var(--fm);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-bottom: 12px;
+}
+
+.stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gh-block {
+  --gh-cell-size: 11px;
+  --gh-cell-gap: 3px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r3);
+  padding: 22px 24px;
+}
+
+.gh-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gh-title {
+  font-family: var(--fh);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.gh-link {
+  font-family: var(--fm);
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--amd);
+  padding-bottom: 1px;
+}
+
+.gh-sub {
+  font-family: var(--fm);
+  font-size: 11px;
+  color: var(--sub);
+  margin-bottom: 16px;
+}
+
+.contrib-outer {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 4px;
+}
+
+.contrib-grid {
+  display: grid;
+  grid-template-columns: repeat(52, var(--gh-cell-size));
+  grid-template-rows: repeat(7, var(--gh-cell-size));
+  gap: var(--gh-cell-gap);
+  width: max-content;
+  grid-auto-flow: column;
+}
+
+.cc {
+  width: var(--gh-cell-size);
+  height: var(--gh-cell-size);
+  border-radius: 2px;
+}
+
+.gh-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.gh-legend span {
+  font-family: var(--fm);
+  font-size: 10px;
+  color: var(--sub);
+}
+
+.gh-legend-cells {
+  display: flex;
+  gap: var(--gh-cell-gap);
+}
+
+@media (max-width: 1199px) {
+  .about-grid {
+    grid-template-columns: 220px 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-photo {
+    position: static;
+  }
+
+  .about-photo-frame {
+    aspect-ratio: 16/9;
+    max-height: 260px;
+  }
+
+  .gh-block {
+    --gh-cell-size: 8px;
+    --gh-cell-gap: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-photo-frame {
+    max-height: 240px;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gh-block {
+    --gh-cell-size: 6px;
+    --gh-cell-gap: 2px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-photo-frame {
+    aspect-ratio: 4/3;
+    max-height: 200px;
+  }
+
+  .about-bio h3 {
+    font-size: 22px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .stat-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .stat-n {
+    font-size: 26px;
+  }
+
+  .gh-block {
+    --gh-cell-size: 4px;
+    --gh-cell-gap: 1px;
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .gh-head {
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .gh-title {
+    font-size: 14px;
+  }
+
+  .gh-link {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  .gh-sub {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+  .gh-legend {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about-grid {
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .about-grid {
+    grid-template-columns: 360px 1fr;
+    gap: 78px;
+  }
+
+  .gh-block {
+    padding: 26px 28px;
+  }
+}
