@@ -20,6 +20,7 @@ export default function Hero() {
 
           <h1 className="hero-h fu d1">
             <span className="word-dim">Full</span>
+            {' '}
             <span className="word-accent">Stack</span>
             <span className="word-solid">Dev.</span>
           </h1>
@@ -44,11 +45,6 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="hero-stack fu d5">
-            {['React', 'Node.js', 'JavaScript', 'Express', 'MongoDB', 'REST APIs', 'SCSS', 'Git'].map((t, i) => (
-              <span key={t} className={`s-pill${i < 2 ? ' hi' : ''}`}>{t}</span>
-            ))}
-          </div>
         </div>
 
         {/* Right avatar */}

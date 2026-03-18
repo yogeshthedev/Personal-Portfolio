@@ -120,6 +120,7 @@
   letter-spacing: -5px;
   line-height: 0.88;
   margin-bottom: 4px;
+  white-space: nowrap;
 }
 
 .hero-h .word-dim {
@@ -134,7 +135,7 @@
   color: transparent;
   -webkit-text-stroke: 1.5px var(--accent);
   letter-spacing: -3px;
-  display: block;
+  display: inline-block;
   position: relative;
 }
 

@@ -59,7 +59,7 @@ body::before {
 }
 
 .container {
-  width: min(100%, var(--max));
+  width: min(100%, calc(var(--max) + 160px));
   margin: 0 auto;
   padding-inline: var(--pad);
 }

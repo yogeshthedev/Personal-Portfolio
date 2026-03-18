@@ -612,8 +612,8 @@
 
 @media (min-width: 1600px) {
   .proj-card {
-    max-width: 1320px;
-    min-height: 560px;
+    max-width: 1400px;
+    min-height: 660px;
   }
 
   .pc-img {
