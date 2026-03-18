@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { projectData, type ProjectPreviewVariant } from '@/components/data/projectData'
+import { projectData, type ProjectPreviewVariant } from '@/data/projectData'
 
 gsap.registerPlugin(ScrollTrigger)
 
