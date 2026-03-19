@@ -1,20 +1,26 @@
 'use client'
 import { useState, useEffect } from 'react'
 
+const navLinks = [
+  { id: 'home',     label: 'Home'    },
+  { id: 'projects', label: 'Work'    },
+  { id: 'about',    label: 'About'   },
+  { id: 'contact',  label: 'Contact' },
+]
+
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
+  const [scrolled,       setScrolled]       = useState(false)
+  const [drawerOpen,     setDrawerOpen]     = useState(false)
+  const [activeSection,  setActiveSection]  = useState('home')
 
   useEffect(() => {
-    const sections = ['home', 'projects', 'about', 'contact']
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 40)
       let current = 'home'
-      sections.forEach(id => {
+      navLinks.forEach(({ id }) => {
         const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top < window.innerHeight * 0.45) current = id
+        if (el && el.getBoundingClientRect().top < window.innerHeight * 0.45)
+          current = id
       })
       setActiveSection(current)
     }
@@ -22,8 +28,10 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Lock body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [drawerOpen])
 
   const scrollTo = (id: string) => {
@@ -34,48 +42,69 @@ export default function Navbar() {
   return (
     <>
       <nav className={`main-nav${scrolled ? ' scrolled' : ''}`}>
-        <a href="#home" className="nav-logo" onClick={e => { e.preventDefault(); scrollTo('home') }}>
-          Yogesh<div className="nav-logo-dot"></div>
+        {/* Logo */}
+        <a
+          href="#home"
+          className="nav-logo"
+          onClick={e => { e.preventDefault(); scrollTo('home') }}
+        >
+          Yogesh<div className="nav-logo-dot" />
         </a>
 
+        {/* Centre pill — desktop only */}
         <div className="nav-pill">
-          {['home', 'projects', 'about', 'contact'].map(sec => (
+          {navLinks.map(({ id, label }) => (
             <a
-              key={sec}
-              href={`#${sec}`}
-              className={activeSection === sec ? 'active' : ''}
-              data-nav={sec}
-              onClick={e => { e.preventDefault(); scrollTo(sec) }}
+              key={id}
+              href={`#${id}`}
+              className={activeSection === id ? 'active' : ''}
+              onClick={e => { e.preventDefault(); scrollTo(id) }}
             >
-              {sec === 'home' ? 'Home' : sec === 'projects' ? 'Work' : sec.charAt(0).toUpperCase() + sec.slice(1)}
+              {label}
             </a>
           ))}
         </div>
 
+        {/* Right side */}
         <div className="nav-right">
-          <a href="#contact" className="nav-hire" onClick={e => { e.preventDefault(); scrollTo('contact') }}>
+          {/* Hire Me — desktop only */}
+          <a
+            href="#contact"
+            className="nav-hire"
+            onClick={e => { e.preventDefault(); scrollTo('contact') }}
+          >
             Hire Me →
           </a>
+
+          {/*
+            Burger — mobile only.
+            It transforms into an ✕ via CSS when open.
+            The separate nav-drawer-close button is REMOVED to avoid duplication.
+          */}
           <button
             className={`nav-burger${drawerOpen ? ' open' : ''}`}
-            onClick={() => setDrawerOpen(!drawerOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setDrawerOpen(v => !v)}
+            aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
           >
-            <span /><span /><span />
+            <span />
+            <span />
+            <span />
           </button>
         </div>
       </nav>
 
-      <div
-        className={`nav-drawer${drawerOpen ? ' open' : ''}`}
-      >
-        <button className="nav-drawer-close" onClick={() => setDrawerOpen(false)}>✕</button>
-        {['home', 'projects', 'about', 'contact'].map(sec => (
-          <a key={sec} href={`#${sec}`} onClick={e => { e.preventDefault(); scrollTo(sec) }}>
-            {sec === 'home' ? 'Home' : sec === 'projects' ? 'Work' : sec.charAt(0).toUpperCase() + sec.slice(1)}
+      {/* Mobile drawer — no close button inside, burger handles it */}
+      <div className={`nav-drawer${drawerOpen ? ' open' : ''}`} aria-hidden={!drawerOpen}>
+        {navLinks.map(({ id, label }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            onClick={e => { e.preventDefault(); scrollTo(id) }}
+          >
+            {label}
           </a>
         ))}
-        <div className="nd-sub">Yogesh Meena · Full-Stack Developer</div>
+        <p className="nd-sub">Yogesh Meena · Full-Stack Developer</p>
       </div>
     </>
   )

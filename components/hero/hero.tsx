@@ -8,14 +8,14 @@ export default function Hero() {
       <div className="hero-glow glow-3" />
 
       <div className="hero-body">
-        {/* Left text */}
+        {/* ── Left text ── */}
         <div className="hero-left">
           <div className="hero-eyebrow fu">
             <div className="hero-avail">
               <div className="dot-live" />
               Available for Work
             </div>
-            <div className="hero-loc">Kota, India</div>
+            {/* <div className="hero-loc">Kota, India</div> */}
           </div>
 
           <h1 className="hero-h fu d1">
@@ -34,68 +34,86 @@ export default function Hero() {
           </p>
 
           <div className="btn-row fu d4">
-            <a href="#projects" className="btn-p" onClick={e => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) }}>
+            <a
+              href="#projects"
+              className="btn-p"
+              onClick={e => {
+                e.preventDefault()
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
               View My Work
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 8h10M9 4l4 4-4 4" />
               </svg>
             </a>
-            <a href="#contact" className="btn-o" onClick={e => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}>
+            <a
+              href="#contact"
+              className="btn-o"
+              onClick={e => {
+                e.preventDefault()
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
               Let&apos;s Talk
             </a>
           </div>
 
+          <div className="hero-stack fu d5">
+            {['React', 'Next.js', 'Node.js', 'MongoDB', 'Tailwind', 'TypeScript'].map(t => (
+              <span key={t} className={`s-pill${['React', 'Node.js'].includes(t) ? ' hi' : ''}`}>
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Right avatar */}
+        {/* ── Right: Photo frame ── */}
         <div className="hero-right fu d2">
-          <div className="orbit-ring">
-            <div className="orbit-dot" />
-          </div>
-          <div className="orbit-ring-2" />
+          {/* Decorative corner accents */}
+          <span className="frame-corner fc-tl" />
+          <span className="frame-corner fc-tr" />
+          <span className="frame-corner fc-bl" />
+          <span className="frame-corner fc-br" />
 
-          <div className="av-card">
-            <span className="av-emoji">🎌</span>
-            <span className="av-hint">Replace with your photo</span>
-            <div className="av-namecard">
-              <div className="av-name">Yogesh Meena</div>
-              <div className="av-title">Full-Stack Developer</div>
+          {/* Photo placeholder — swap <div.photo-placeholder> for <img> when ready */}
+          <div className="photo-wrap">
+            <div className="photo-placeholder">
+              <svg className="ph-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="24" r="12" stroke="currentColor" strokeWidth="2" />
+                <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              <span className="ph-label">Add your photo here</span>
             </div>
           </div>
 
-          <div className="stat-chip sc-1">
-            <div className="sc-val">15<b>+</b></div>
-            <div className="sc-lbl">Projects Done</div>
+          {/* Name badge — floats bottom-left of the photo */}
+          <div className="photo-badge">
+            <div className="pb-dot" />
+            <div>
+              <div className="pb-name">Yogesh Meena</div>
+              <div className="pb-title">Full-Stack Developer</div>
+            </div>
           </div>
-          <div className="stat-chip sc-2">
-            <div className="sc-val">2<b>+</b></div>
-            <div className="sc-lbl">Years Exp.</div>
+
+          {/* Floating tag: Learning */}
+          <div className="float-tag ft-top">
+            <span className="ft-icon">🚀</span>
+            <div>
+              <div className="ft-main">Always Learning</div>
+              <div className="ft-sub">Open to opportunities</div>
+            </div>
           </div>
-          <div className="stat-chip sc-3">
-            <div className="sc-open-wrap">
-              <span className="sc-open-dot" />
-              <div>
-                <div className="sc-val sc-open-title">Open to Work</div>
-                <div className="sc-lbl">Full-time / Freelance</div>
-              </div>
+
+          {/* Floating tag: Stack */}
+          <div className="float-tag ft-bottom">
+            <span className="ft-icon">💻</span>
+            <div>
+              <div className="ft-main">MERN Stack</div>
+              <div className="ft-sub">Frontend &amp; Backend</div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Stats strip */}
-      <div className="hero-stats fu d6">
-        {[
-          { num: '15', sup: '+', lbl: 'Projects Completed' },
-          { num: '2', sup: '+', lbl: 'Years of Experience' },
-          { num: '322', sup: '', lbl: 'GitHub Contributions' },
-          { num: '∞', sup: '', lbl: 'Lines of Code' },
-        ].map(s => (
-          <div className="hs-item" key={s.lbl}>
-            <div className="hs-num">{s.num}{s.sup && <b>{s.sup}</b>}</div>
-            <div className="hs-lbl">{s.lbl}</div>
-          </div>
-        ))}
       </div>
     </section>
   )

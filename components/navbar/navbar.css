@@ -1,8 +1,10 @@
+/* ═══════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════ */
+
 nav.main-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 800;
   height: var(--nav-h);
   display: grid;
@@ -10,16 +12,16 @@ nav.main-nav {
   align-items: center;
   padding: 0 var(--pad);
   background: rgba(5, 5, 10, 0);
-  transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+  transition: background 0.4s, box-shadow 0.4s;
 }
 
 nav.main-nav.scrolled {
   background: rgba(5, 5, 10, 0.85);
   backdrop-filter: blur(20px) saturate(1.6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 1px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* ── Logo ──────────────────────────────── */
 .nav-logo {
   font-family: var(--fh);
   font-size: 20px;
@@ -33,8 +35,7 @@ nav.main-nav.scrolled {
 }
 
 .nav-logo-dot {
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--accent);
   margin-left: 1px;
@@ -43,6 +44,7 @@ nav.main-nav.scrolled {
   animation: blink 2.5s ease-in-out infinite;
 }
 
+/* ── Centre pill ───────────────────────── */
 .nav-pill {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.09);
@@ -67,33 +69,23 @@ nav.main-nav.scrolled {
   position: relative;
 }
 
-.nav-pill a:hover {
-  color: var(--text);
-}
-
-.nav-pill a.active {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.07);
-}
+.nav-pill a:hover          { color: var(--text); }
+.nav-pill a.active         { color: var(--text); background: rgba(255,255,255,0.07); }
 
 .nav-pill a::after {
   content: '';
   position: absolute;
-  bottom: 5px;
-  left: 50%;
-  width: 3px;
-  height: 3px;
+  bottom: 5px; left: 50%;
+  width: 3px; height: 3px;
   border-radius: 50%;
   background: var(--accent);
   transform: translateX(-50%) scale(0);
   transition: transform 0.2s;
 }
-
 .nav-pill a.active::after,
-.nav-pill a:hover::after {
-  transform: translateX(-50%) scale(1);
-}
+.nav-pill a:hover::after   { transform: translateX(-50%) scale(1); }
 
+/* ── Right side ────────────────────────── */
 .nav-right {
   display: flex;
   align-items: center;
@@ -112,62 +104,64 @@ nav.main-nav.scrolled {
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: all 0.25s;
-  box-shadow: 0 4px 20px rgba(232, 81, 42, 0.3);
+  box-shadow: 0 4px 20px rgba(232,81,42,0.3);
   white-space: nowrap;
 }
-
 .nav-hire:hover {
   background: #d4411e;
   transform: translateY(-1px);
-  box-shadow: 0 6px 28px rgba(232, 81, 42, 0.5);
+  box-shadow: 0 6px 28px rgba(232,81,42,0.5);
 }
 
+/* ── Burger ────────────────────────────── */
 .nav-burger {
-  display: none;
-  width: 40px;
-  height: 40px;
+  display: none;               /* shown only on mobile via media query */
+  width: 40px; height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255,255,255,0.06);
   border: 1px solid var(--border);
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  /* sits ABOVE the drawer so it stays clickable to close */
+  position: relative;
+  z-index: 810;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-burger:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--bhi);
 }
 
 .nav-burger span {
   display: block;
-  width: 16px;
-  height: 1.5px;
+  width: 16px; height: 1.5px;
   background: var(--text);
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
 }
 
-.nav-burger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(4.5px, 4.5px);
-}
+/* Animate to ✕ */
+.nav-burger.open span:nth-child(1) { transform: rotate(45deg)  translate(4.5px, 4.5px); }
+.nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-burger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
-.nav-burger.open span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.nav-burger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(4.5px, -4.5px);
-}
-
+/* ── Mobile drawer ─────────────────────── */
+/*
+  The drawer sits below z-index 800 (nav) so the burger button
+  (z-index 810) always floats on top and remains clickable.
+*/
 .nav-drawer {
-  display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+  z-index: 790;
   background: rgba(5, 5, 10, 0.97);
   backdrop-filter: blur(24px);
-  z-index: 790;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -175,7 +169,7 @@ nav.main-nav.scrolled {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .nav-drawer.open {
@@ -189,7 +183,7 @@ nav.main-nav.scrolled {
   font-size: clamp(28px, 8vw, 44px);
   font-weight: 800;
   letter-spacing: -1px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255,255,255,0.35);
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
   display: block;
@@ -202,7 +196,7 @@ nav.main-nav.scrolled {
   transform: translateX(8px);
 }
 
-.nav-drawer .nd-sub {
+.nd-sub {
   font-family: var(--fm);
   font-size: 11px;
   color: var(--faint);
@@ -211,65 +205,25 @@ nav.main-nav.scrolled {
   margin-top: 24px;
 }
 
-.nav-drawer-close {
-  position: absolute;
-  top: 24px;
-  right: var(--pad);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: var(--sub);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.nav-drawer-close:hover {
-  color: var(--text);
-  border-color: var(--bhi);
-}
-
+/* ── Responsive ───────────────────────── */
 @media (max-width: 1024px) {
   nav.main-nav {
     grid-template-columns: 1fr auto;
   }
-
-  .nav-pill {
-    display: none;
-  }
-
-  .nav-hire {
-    display: none;
-  }
-
-  .nav-burger {
-    display: flex;
-  }
+  .nav-pill  { display: none; }
+  .nav-hire  { display: none; }
+  .nav-burger { display: flex; }
 }
 
 @media (max-width: 768px) {
-  .nav-drawer a {
-    font-size: clamp(26px, 8.5vw, 40px);
-  }
+  .nav-drawer a { font-size: clamp(26px, 8.5vw, 40px); }
 }
 
 @media (max-width: 480px) {
-  .nav-logo {
-    font-size: 18px;
-  }
+  .nav-logo { font-size: 18px; }
 }
 
 @media (min-width: 1600px) {
-  .nav-logo {
-    font-size: 22px;
-  }
-
-  .nav-pill a {
-    padding: 8px 20px;
-  }
+  .nav-logo   { font-size: 22px; }
+  .nav-pill a { padding: 8px 20px; }
 }
