@@ -8,29 +8,29 @@ const links = [
   {
     Icon: HiOutlineMail,
     label: 'Email',
-    value: 'yogesh@example.com',
-    href: 'mailto:yogesh@example.com',
+    value: 'developeryogeshh@gmail.com',
+    href: 'mailto:developeryogeshh@gmail.com',
     hint: 'Best way to reach me',
   },
   {
     Icon: FaLinkedin,
     label: 'LinkedIn',
-    value: '/in/yogeshmeena',
-    href: 'https://linkedin.com/in/yogeshmeena',
+    value: '/in/yogeshthedev',
+    href: 'https://linkedin.com/in/yogeshthedev',
     hint: "Let's connect professionally",
   },
   {
     Icon: FaGithub,
     label: 'GitHub',
-    value: '@yogeshmeena',
-    href: 'https://github.com/yogeshmeena',
+    value: '@yogeshthedev',
+    href: 'https://github.com/yogeshthedev',
     hint: 'See my code & projects',
   },
   {
     Icon: FaTwitter,
     label: 'Twitter / X',
-    value: '@yogeshmeena',
-    href: 'https://twitter.com/yogeshmeena',
+    value: '@yogeshthedev',
+    href: 'https://twitter.com/yogeshthedev',
     hint: 'Say hello anytime',
   },
 ]
@@ -101,7 +101,7 @@ export default function Contact() {
         <div className="ct-bottom">
           <span className="ct-bottom-copy">
             Prefer a direct line?{' '}
-            <a href="mailto:yogesh@example.com" className="ct-bottom-link">
+            <a href="mailto:developeryogeshh@gmail.com" className="ct-bottom-link">
               Drop me an email →
             </a>
           </span>

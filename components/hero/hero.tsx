@@ -83,7 +83,7 @@ export default function Hero() {
                 <circle cx="32" cy="24" r="12" stroke="currentColor" strokeWidth="2" />
                 <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
-              <span className="ph-label">Add your photo here</span>
+              <span className="ph-label">Building In Progress</span>
             </div>
           </div>
 

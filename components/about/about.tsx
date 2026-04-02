@@ -114,14 +114,14 @@ export default function About() {
               </p>
             </div>
 
-            <div className="stats-row">
+            {/* <div className="stats-row">
               <div className="stat-card"><div className="stat-n">15<b>+</b></div><div className="stat-l">Projects</div></div>
               <div className="stat-card"><div className="stat-n">2<b>+</b></div><div className="stat-l">Yrs Exp.</div></div>
               <div className="stat-card">
                 <div className="stat-n">{total ?? '—'}</div>
                 <div className="stat-l">Contributions</div>
               </div>
-            </div>
+            </div> */}
 
             <div className="about-div" />
 
