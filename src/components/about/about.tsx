@@ -8,7 +8,7 @@ import {
 } from 'react-icons/si'
 import { FaCss3 } from 'react-icons/fa'
 import { TbApi } from 'react-icons/tb'
-import { FiMapPin, FiCpu, FiLayers, FiShield, FiCode, FiArrowUpRight } from 'react-icons/fi'
+import { FiCpu, FiLayers, FiShield } from 'react-icons/fi'
 
 /* ── Tech Categories with their authentic brand colors ─────────── */
 const techCategories = [
@@ -70,59 +70,16 @@ export default function About() {
 
         {/* ── Modern Architectural Bento Grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
-          {/* Bento Cell 1: Bio Narrative & Engineering Philosophy (7 Cols on desktop) */}
-          <div className="md:col-span-12 lg:col-span-7 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex flex-col justify-between">
-            <div>
-              <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--accent)] mb-5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
-                <span>Developer Statement</span>
-              </div>
-              <h3 className="font-heading text-[clamp(20px,2.2vw,26px)] font-bold leading-[1.35] text-white mb-3.5">
-                Building robust web applications from polished UIs to scalable APIs.
-              </h3>
-              <p className="text-[14.5px] text-[var(--sub)] leading-[1.8] mb-6">
-                I am <strong className="text-white font-semibold">Yogesh Meena</strong>, a Full-Stack Web Developer. I build end-to-end web products
-                focusing on clean code architecture, type safety, and seamless responsive design across both client and server.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <span className="font-mono text-[10.5px] py-1 px-3 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)] text-[var(--sub)] tracking-[0.04em]">
-                Component-Driven
-              </span>
-              <span className="font-mono text-[10.5px] py-1 px-3 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)] text-[var(--sub)] tracking-[0.04em]">
-                RESTful Architecture
-              </span>
-              <span className="font-mono text-[10.5px] py-1 px-3 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)] text-[var(--sub)] tracking-[0.04em]">
-                Modular Systems
-              </span>
-            </div>
-          </div>
-
-          {/* Bento Cell 2: Live Status & Location Card (5 Cols on desktop) */}
-          <div className="md:col-span-12 lg:col-span-5 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex flex-col justify-between">
-            <div>
-              <div className="flex justify-between items-center mb-4.5">
-                <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-[var(--faint)]">Current Availability</span>
-                <span className="w-2 h-2 rounded-full bg-[var(--status-green)] shadow-[0_0_0_3px_rgba(34,197,94,0.2)] animate-pulse" />
-              </div>
-              <div className="font-heading text-[22px] font-bold text-white mb-1.5">Open for Work</div>
-              <p className="text-[13.5px] text-[var(--sub)] leading-[1.6] mb-5">
-                Available for Full-time roles, contracts &amp; freelance projects.
-              </p>
-            </div>
-            <div className="flex items-center gap-3 p-3.5 sm:p-4 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)]">
-              <FiMapPin className="text-[18px] text-[var(--accent)] shrink-0" />
-              <div>
-                <strong className="block text-[13px] font-semibold text-white">Kota, Rajasthan</strong>
-                <span className="font-mono text-[11px] text-[var(--faint)]">India · UTC +05:30</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Bento Cell 3: Technical Skills Directory with Authentic Brand Colors (12 Cols) */}
+          {/* Bento Cell: Technical Skills Directory with Authentic Brand Colors & Open for Work Tag */}
           <div className="md:col-span-12 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
-            <div className="flex justify-between items-center mb-4.5">
-              <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-[var(--faint)]">Technical Ecosystem</span>
+            <div className="flex justify-between items-center mb-4.5 flex-wrap gap-2.5">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-[var(--faint)]">Technical Ecosystem</span>
+                <span className="inline-flex items-center gap-2 py-1 px-2.5 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] font-mono text-[10.5px] text-[var(--accent)] tracking-[0.05em]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--status-green)] shadow-[0_0_0_2px_rgba(34,197,94,0.25)] animate-pulse" />
+                  <span>Open for Work</span>
+                </span>
+              </div>
               <span className="hidden sm:inline-block font-mono text-[10.5px] tracking-[0.08em] text-[var(--faint)] uppercase">Brand Colors // Categorized</span>
             </div>
 

@@ -43,7 +43,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 flex-wrap pt-1">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2.5 bg-white text-[#09090b] font-heading text-[13px] font-semibold px-6 py-3 rounded-[var(--r1)] no-underline transition-all duration-200 hover:bg-white/95 hover:-translate-y-0.5"
+                className="inline-flex items -center justify-center gap-2.5 bg-white text-[#09090b] font-heading text-[13px] font-semibold px-6 py-3 rounded-[var(--r1)] no-underline transition-all duration-200 hover:bg-white/95 hover:-translate-y-0.5"
                 onClick={e => {
                   e.preventDefault()
                   document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
