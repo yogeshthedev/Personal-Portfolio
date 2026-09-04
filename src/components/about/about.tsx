@@ -55,81 +55,95 @@ const techCategories = [
 
 export default function About() {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="py-20 lg:py-[100px] pb-24 lg:pb-[120px] relative">
       <div className="container">
         {/* Simple & clear section header */}
-        <div className="about-header">
+        <div className="mb-12">
           <span className="label">03 // Profile</span>
-          <h2 className="section-h about-title">
+          <h2 className="section-h mt-2.5 mb-3 text-[clamp(34px,4.5vw,54px)] leading-[1.1]">
             About <em>Me</em>
           </h2>
-          <p className="about-subtitle">
+          <p className="text-[15px] text-[var(--sub)] max-w-[540px] leading-[1.7] m-0">
             A quick overview of my background, technical skills, and how I build web products.
           </p>
         </div>
 
         {/* ── Modern Architectural Bento Grid ── */}
-        <div className="about-bento-grid">
-          {/* Bento Cell 1: Bio Narrative & Engineering Philosophy (Large) */}
-          <div className="bento-card bento-hero-card">
-            <div className="bento-badge">
-              <span className="bento-dot" />
-              <span>Developer Statement</span>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
+          {/* Bento Cell 1: Bio Narrative & Engineering Philosophy (7 Cols on desktop) */}
+          <div className="md:col-span-12 lg:col-span-7 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--accent)] mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+                <span>Developer Statement</span>
+              </div>
+              <h3 className="font-heading text-[clamp(20px,2.2vw,26px)] font-bold leading-[1.35] text-white mb-3.5">
+                Building robust web applications from polished UIs to scalable APIs.
+              </h3>
+              <p className="text-[14.5px] text-[var(--sub)] leading-[1.8] mb-6">
+                I am <strong className="text-white font-semibold">Yogesh Meena</strong>, a Full-Stack Web Developer. I build end-to-end web products
+                focusing on clean code architecture, type safety, and seamless responsive design across both client and server.
+              </p>
             </div>
-            <h3 className="bento-hero-heading">
-              Building robust web applications from polished UIs to scalable APIs.
-            </h3>
-            <p className="bento-hero-desc">
-              I am <strong>Yogesh Meena</strong>, a Full-Stack Web Developer. I build end-to-end web products
-              focusing on clean code architecture, type safety, and seamless responsive design across both client and server.
-            </p>
-            <div className="bento-hero-tags">
-              <span className="bento-tag">Component-Driven</span>
-              <span className="bento-tag">RESTful Architecture</span>
-              <span className="bento-tag">Modular Systems</span>
+            <div className="flex flex-wrap gap-2">
+              <span className="font-mono text-[10.5px] py-1 px-3 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)] text-[var(--sub)] tracking-[0.04em]">
+                Component-Driven
+              </span>
+              <span className="font-mono text-[10.5px] py-1 px-3 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)] text-[var(--sub)] tracking-[0.04em]">
+                RESTful Architecture
+              </span>
+              <span className="font-mono text-[10.5px] py-1 px-3 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)] text-[var(--sub)] tracking-[0.04em]">
+                Modular Systems
+              </span>
             </div>
           </div>
 
-          {/* Bento Cell 2: Live Status & Location Card */}
-          <div className="bento-card bento-status-card">
-            <div className="bento-card-header">
-              <span className="bento-cell-label">Current Availability</span>
-              <span className="status-indicator-live" />
+          {/* Bento Cell 2: Live Status & Location Card (5 Cols on desktop) */}
+          <div className="md:col-span-12 lg:col-span-5 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-center mb-4.5">
+                <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-[var(--faint)]">Current Availability</span>
+                <span className="w-2 h-2 rounded-full bg-[var(--status-green)] shadow-[0_0_0_3px_rgba(34,197,94,0.2)] animate-pulse" />
+              </div>
+              <div className="font-heading text-[22px] font-bold text-white mb-1.5">Open for Work</div>
+              <p className="text-[13.5px] text-[var(--sub)] leading-[1.6] mb-5">
+                Available for Full-time roles, contracts &amp; freelance projects.
+              </p>
             </div>
-            <div className="status-headline">Open for Work</div>
-            <p className="status-sub">Available for Full-time roles, contracts &amp; freelance projects.</p>
-            <div className="location-chip">
-              <FiMapPin className="loc-icon" />
+            <div className="flex items-center gap-3 p-3.5 sm:p-4 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)]">
+              <FiMapPin className="text-[18px] text-[var(--accent)] shrink-0" />
               <div>
-                <strong>Kota, Rajasthan</strong>
-                <span>India · UTC +05:30</span>
+                <strong className="block text-[13px] font-semibold text-white">Kota, Rajasthan</strong>
+                <span className="font-mono text-[11px] text-[var(--faint)]">India · UTC +05:30</span>
               </div>
             </div>
           </div>
 
-          {/* Bento Cell 3: Technical Skills Directory with Authentic Brand Colors */}
-          <div className="bento-card bento-skills-card">
-            <div className="bento-card-header">
-              <span className="bento-cell-label">Technical Ecosystem</span>
-              <span className="bento-meta-pill">Brand Colors // Categorized</span>
+          {/* Bento Cell 3: Technical Skills Directory with Authentic Brand Colors (12 Cols) */}
+          <div className="md:col-span-12 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
+            <div className="flex justify-between items-center mb-4.5">
+              <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-[var(--faint)]">Technical Ecosystem</span>
+              <span className="hidden sm:inline-block font-mono text-[10.5px] tracking-[0.08em] text-[var(--faint)] uppercase">Brand Colors // Categorized</span>
             </div>
 
-            <div className="bento-stack-categories">
+            <div className="flex flex-col gap-4 mt-1">
               {techCategories.map(cat => (
-                <div key={cat.name} className="bento-cat-row">
-                  <span className="bento-cat-name">
-                    <span className="cat-slash">/</span> {cat.name}
+                <div
+                  key={cat.name}
+                  className="grid grid-cols-1 md:grid-cols-[130px_1fr] items-center gap-2.5 md:gap-5 p-3 md:py-3 md:px-3.5 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-[var(--r1)] transition-colors duration-200 hover:bg-white/[0.04]"
+                >
+                  <span className="font-mono text-[11.5px] tracking-[0.08em] uppercase text-[var(--sub)] font-semibold">
+                    <span className="text-[var(--accent)]">/</span> {cat.name}
                   </span>
-                  <div className="bento-icons-flow">
+                  <div className="flex flex-wrap gap-2 items-center">
                     {cat.items.map(({ label, Icon, color }) => (
                       <div
                         key={label}
-                        className="bento-tech-pill"
-                        style={{ '--brand-color': color } as React.CSSProperties}
+                        className="group inline-flex items-center gap-1.5 py-1.5 px-3 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r1)] cursor-default transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.06] hover:shadow-[0_4px_14px_rgba(0,0,0,0.3)]"
                         title={label}
                       >
-                        <Icon className="bento-tech-icon" style={{ color }} />
-                        <span className="bento-tech-name">{label}</span>
+                        <Icon className="text-[15px] shrink-0 transition-transform duration-200 group-hover:scale-115" style={{ color }} />
+                        <span className="font-mono text-[11.5px] text-white">{label}</span>
                       </div>
                     ))}
                   </div>
@@ -139,34 +153,34 @@ export default function About() {
           </div>
 
           {/* Bento Cell 4: Core Specialization Pillar */}
-          <div className="bento-card bento-pillar-card">
-            <div className="pillar-icon-box">
-              <FiCpu className="pillar-svg" />
+          <div className="md:col-span-6 lg:col-span-4 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex flex-col gap-3">
+            <div className="w-11 h-11 rounded-[var(--r1)] bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] mb-1">
+              <FiCpu className="text-[20px]" />
             </div>
-            <h4 className="pillar-title">Full-Stack Cohesion</h4>
-            <p className="pillar-text">
+            <h4 className="font-heading text-[16px] font-bold text-white m-0">Full-Stack Cohesion</h4>
+            <p className="text-[13.5px] text-[var(--sub)] leading-[1.65] m-0">
               Unifying React/TypeScript client frontends with secure Node.js &amp; Express REST backends.
             </p>
           </div>
 
           {/* Bento Cell 5: Data & Schema Pillar */}
-          <div className="bento-card bento-pillar-card">
-            <div className="pillar-icon-box">
-              <FiLayers className="pillar-svg" />
+          <div className="md:col-span-6 lg:col-span-4 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex flex-col gap-3">
+            <div className="w-11 h-11 rounded-[var(--r1)] bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] mb-1">
+              <FiLayers className="text-[20px]" />
             </div>
-            <h4 className="pillar-title">Data Architecture</h4>
-            <p className="pillar-text">
+            <h4 className="font-heading text-[16px] font-bold text-white m-0">Data Architecture</h4>
+            <p className="text-[13.5px] text-[var(--sub)] leading-[1.65] m-0">
               Designing scalable NoSQL &amp; relational data schemas with MongoDB, PostgreSQL, and MySQL.
             </p>
           </div>
 
           {/* Bento Cell 6: Engineering Discipline Pillar */}
-          <div className="bento-card bento-pillar-card">
-            <div className="pillar-icon-box">
-              <FiShield className="pillar-svg" />
+          <div className="md:col-span-12 lg:col-span-4 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-7 relative transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex flex-col gap-3">
+            <div className="w-11 h-11 rounded-[var(--r1)] bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] mb-1">
+              <FiShield className="text-[20px]" />
             </div>
-            <h4 className="pillar-title">Reliability &amp; Safety</h4>
-            <p className="pillar-text">
+            <h4 className="font-heading text-[16px] font-bold text-white m-0">Reliability &amp; Safety</h4>
+            <p className="text-[13.5px] text-[var(--sub)] leading-[1.65] m-0">
               Strict typing, clean modular hierarchy, and optimized asset delivery for minimal latency.
             </p>
           </div>

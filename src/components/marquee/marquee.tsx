@@ -47,28 +47,50 @@ function Track({
   items,
   dir = 'left',
   duration = '34s',
+  isSecondRow = false,
 }: {
   items: MarqueeItem[]
   dir?: 'left' | 'right'
   duration?: string
+  isSecondRow?: boolean
 }) {
-  // 4 copies: animate shifts by 2 copies (-50%), so it's always filled
   const copies = [...items, ...items, ...items, ...items]
 
   return (
-    <div className="mq-row">
+    <div className={`overflow-hidden py-2.5 sm:py-3 ${isSecondRow ? 'border-t border-white/[0.04]' : ''}`}>
       <div
-        className="mq-track"
+        className="flex w-max items-center will-change-transform group-hover:[animation-play-state:paused]"
         style={{
           animationName: dir === 'left' ? 'mq-left' : 'mq-right',
           animationDuration: duration,
+          animationTimingFunction: 'linear',
+          animationIterationCount: 'infinite',
         }}
       >
         {copies.map(({ label, Icon, color }, i) => (
-          <span className="mq-item" key={i} style={{ '--item-color': color } as React.CSSProperties}>
-            <Icon className="mq-icon" style={{ color }} aria-hidden />
-            <span className="mq-label">{label}</span>
-            <span className="mq-dot" style={{ backgroundColor: color || 'var(--accent)' }} aria-hidden />
+          <span
+            className="group/item inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-5 md:px-6 whitespace-nowrap cursor-default transition-opacity duration-200"
+            key={i}
+          >
+            <Icon
+              className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 opacity-90 transition-all duration-200 ease-out group-hover/item:scale-125 group-hover/item:-rotate-6 group-hover/item:opacity-100"
+              style={{ color }}
+              aria-hidden
+            />
+            <span
+              className={`font-heading text-[10px] sm:text-[11px] uppercase transition-colors duration-200 group-hover/item:!text-white ${
+                isSecondRow
+                  ? 'text-white/30 font-semibold tracking-[0.1em]'
+                  : 'text-white/60 font-bold tracking-[0.13em]'
+              }`}
+            >
+              {label}
+            </span>
+            <span
+              className="w-[3px] h-[3px] rounded-full shrink-0 ml-1.5 sm:ml-2"
+              style={{ backgroundColor: color || 'var(--accent)' }}
+              aria-hidden
+            />
           </span>
         ))}
       </div>
@@ -79,9 +101,12 @@ function Track({
 /* ── Marquee ────────────────────────────── */
 export default function Marquee() {
   return (
-    <div className="marquee-bar" aria-hidden="true">
-      <Track items={row1} dir="left"  duration="38s" />
-      <Track items={row2} dir="right" duration="30s" />
+    <div
+      className="group relative border-y border-[var(--border)] overflow-hidden p-0 [mask-image:linear-gradient(90deg,transparent_0%,black_4%,black_96%,transparent_100%)]"
+      aria-hidden="true"
+    >
+      <Track items={row1} dir="left" duration="38s" />
+      <Track items={row2} dir="right" duration="30s" isSecondRow />
     </div>
   )
 }
