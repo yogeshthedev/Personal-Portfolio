@@ -25,13 +25,47 @@ export default function Contact() {
       return
     }
 
-    setStatus('submitting')
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    if (!accessKey || accessKey === 'your_access_key_here') {
+      setStatus('error')
+      setFeedbackMessage('Contact form is missing a Web3Forms Access Key. Please set VITE_WEB3FORMS_ACCESS_KEY in .env.')
+      return
+    }
 
-    setTimeout(() => {
-      setStatus('success')
-      setFeedbackMessage('Thank you! Your message has been received. I will reply within 24 hours.')
-      setFormState({ name: '', email: '', message: '' })
-    }, 500)
+    setStatus('submitting')
+    setFeedbackMessage('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+          subject: `Portfolio Contact from ${formState.name}`,
+          from_name: formState.name,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        setStatus('success')
+        setFeedbackMessage('Thank you! Your message has been sent directly to my inbox. I will reply within 24 hours.')
+        setFormState({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+        setFeedbackMessage(data.message || 'Failed to send message. Please try again or reach out via email directly.')
+      }
+    } catch {
+      setStatus('error')
+      setFeedbackMessage('Network error occurred. Please check your connection or email directly.')
+    }
   }
 
   return (
