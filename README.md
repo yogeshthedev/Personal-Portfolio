@@ -1,32 +1,37 @@
-# Yogesh Meena — Portfolio (Next.js)
+# Yogesh Meena — Portfolio (React + Vite)
 
-A pixel-perfect Next.js conversion of the portfolio HTML file.
+A modern, high-performance portfolio built with React, Vite, and TypeScript.
 
 ## Tech Stack
-- **Next.js 14** (App Router)
+- **Vite 5** (Fast development & optimized production build)
+- **React 18**
 - **TypeScript**
-- **CSS Modules** (global CSS with design tokens)
+- **Vanilla CSS / Custom Design System** (Variables, animations, responsive design)
+- **React Icons**
 
 ## Project Structure
 
 ```
-yogesh-portfolio/
-├── app/
-│   ├── globals.css       # All styles, design tokens, animations
-│   ├── layout.tsx        # Root layout with metadata
-│   └── page.tsx          # Main page assembling all sections
-├── components/
-│   ├── Cursor.tsx        # Custom animated cursor
-│   ├── Navbar.tsx        # Fixed nav with scroll effects & mobile drawer
-│   ├── Hero.tsx          # Hero section with avatar card & stats
-│   ├── Marquee.tsx       # Scrolling tech stack marquee
-│   ├── Projects.tsx      # Scroll-stack project cards
-│   ├── About.tsx         # About section with GitHub grid
-│   ├── Contact.tsx       # Contact form
-│   └── Footer.tsx        # Footer
-├── next.config.js
-├── tsconfig.json
-└── package.json
+Personal-Portfolio/
+├── index.html            # HTML entry point with Google Fonts
+├── vite.config.ts        # Vite configuration & path aliases (@)
+├── tsconfig.json         # TypeScript compiler configuration
+├── package.json
+└── src/
+    ├── main.tsx          # Application root
+    ├── App.tsx           # Main page assembling all sections
+    ├── globals.css       # Core design tokens, global resets & typography
+    ├── data/
+    │   └── projectData.ts # Projects configuration and metadata
+    └── components/
+        ├── cursor/       # Custom animated cursor
+        ├── navbar/       # Fixed navbar with smooth scroll & mobile drawer
+        ├── hero/         # Hero section with interactive badge & badges
+        ├── marquee/      # Infinite scrolling tech stack marquee
+        ├── projects/     # Modern responsive projects showcase with tabs & hover glow
+        ├── about/        # Bio & tech stack categorization
+        ├── contact/      # Contact info cards
+        └── footer/       # Footer with quick navigation
 ```
 
 ## Getting Started
@@ -41,41 +46,12 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
-
 ### 3. Build for production
 ```bash
 npm run build
-npm start
 ```
 
-## Customization
-
-### Add your photo
-Replace the emoji placeholder in `components/Hero.tsx` and `components/About.tsx`:
-```tsx
-// In Hero.tsx — av-card section
-<img src="/your-photo.jpg" alt="Yogesh Meena" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-
-// In About.tsx — about-photo-frame section
-<img src="/your-photo.jpg" alt="Yogesh Meena" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-```
-Place your photo in the `public/` folder.
-
-### Update contact info
-Edit `components/Contact.tsx` — update email, LinkedIn, and GitHub links.
-
-### Update project links
-Edit `components/Projects.tsx` — update the `href="#"` links in pc-links to real URLs.
-
-### Update email
-In `components/Contact.tsx`, replace `yogesh@example.com` with your actual email.
-
-## Deploying to Vercel
-
+### 4. Preview production build
 ```bash
-npm install -g vercel
-vercel
+npm run preview
 ```
-
-Or push to GitHub and connect to [vercel.com](https://vercel.com).

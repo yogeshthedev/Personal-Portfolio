@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#0f172a" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#090b0e" stop-opacity="1"/>
+    </radialGradient>
+    
+    <!-- Accent Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Torso Gradient -->
+    <linearGradient id="torsoGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="65%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090b0e"/>
+    </linearGradient>
+
+    <!-- Face Gradient -->
+    <linearGradient id="headGrad" x1="25%" y1="15%" x2="75%" y2="85%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="45%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="dotGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#38bdf8" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="400" height="440" fill="url(#bgGlow)"/>
+  <rect width="400" height="440" fill="url(#dotGrid)"/>
+
+  <!-- Halo Target Rings -->
+  <circle cx="200" cy="180" r="116" fill="none" stroke="#38bdf8" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <circle cx="200" cy="180" r="142" fill="none" stroke="#64748b" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- Ambient Code Text in Background -->
+  <g opacity="0.22" font-family="JetBrains Mono, monospace" font-size="9" fill="#38bdf8">
+    <text x="28" y="55">&lt;engineer&gt;</text>
+    <text x="28" y="75">name: "Yogesh Meena";</text>
+    <text x="28" y="95">status: "ready";</text>
+    <text x="28" y="115">stack: ["react", "node"];</text>
+
+    <text x="270" y="55">arch: "full-stack";</text>
+    <text x="270" y="75">runtime: "v8";</text>
+    <text x="270" y="95">git: "active";</text>
+    <text x="270" y="115">commit: "0x7F2A";</text>
+  </g>
+
+  <!-- Silhouette Figure -->
+  <g id="figure">
+    <!-- Torso & Shoulders -->
+    <path d="M 90 440 C 100 340, 138 280, 175 268 L 225 268 C 262 280, 300 340, 310 440 Z" fill="url(#torsoGrad)"/>
+    
+    <!-- Minimalist Hoodie Collar -->
+    <path d="M 175 268 Q 200 312 225 268" fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.5"/>
+    <path d="M 194 280 L 194 360" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.3"/>
+    <path d="M 206 280 L 206 360" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.3"/>
+
+    <!-- Neck -->
+    <rect x="187" y="222" width="26" height="52" rx="6" fill="#64748b"/>
+
+    <!-- Head Contour -->
+    <path d="M 158 170 C 158 116, 242 116, 242 170 C 242 216, 222 236, 200 238 C 178 236, 158 216, 158 170 Z" fill="url(#headGrad)"/>
+
+    <!-- Modern Dark Hair -->
+    <path d="M 154 160 C 152 106, 248 106, 246 160 C 235 118, 165 118, 154 160 Z" fill="#090b0e"/>
+    <path d="M 156 136 C 174 98, 226 98, 244 136 C 230 112, 170 112, 156 136 Z" fill="#1e293b"/>
+
+    <!-- Angular Eyewear Glasses -->
+    <g stroke="#38bdf8" stroke-width="2" fill="none">
+      <rect x="168" y="160" width="26" height="18" rx="4" fill="#090b0e" fill-opacity="0.85"/>
+      <rect x="206" y="160" width="26" height="18" rx="4" fill="#090b0e" fill-opacity="0.85"/>
+      <line x1="194" y1="169" x2="206" y2="169"/>
+      <line x1="168" y1="167" x2="157" y2="164"/>
+      <line x1="232" y1="167" x2="243" y2="164"/>
+    </g>
+
+    <!-- Glass Refraction Light Glint -->
+    <line x1="172" y1="163" x2="182" y2="175" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+    <line x1="210" y1="163" x2="220" y2="175" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Modern Studio Headphones -->
+    <path d="M 152 238 C 146 254, 152 270, 168 276" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 248 238 C 254 254, 248 270, 232 276" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+    <rect x="142" y="232" width="14" height="26" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.6"/>
+    <rect x="244" y="232" width="14" height="26" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- Left & Right Floating Status Badges -->
+  <g transform="translate(32, 335)">
+    <rect width="84" height="26" rx="5" fill="#090b0e" fill-opacity="0.9" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <text x="42" y="17" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle">TS / REACT</text>
+  </g>
+
+  <g transform="translate(284, 335)">
+    <rect width="84" height="26" rx="5" fill="#090b0e" fill-opacity="0.9" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <text x="42" y="17" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle">NODE / MONGO</text>
+  </g>
+
+  <!-- Viewfinder Optical Reticles -->
+  <path d="M 20 28 L 20 20 L 28 20" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.65"/>
+  <path d="M 380 28 L 380 20 L 372 20" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.65"/>
+  <path d="M 20 412 L 20 420 L 28 420" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.65"/>
+  <path d="M 380 412 L 380 420 L 372 420" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.65"/>
+</svg>
