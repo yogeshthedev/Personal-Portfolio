@@ -1,0 +1,120 @@
+﻿<svg xmlns=http://www.w3.org/2000/svg viewBox=0 0 800 500 width=100% height=100%>
+  <defs>
+    <linearGradient id=dl-bg x1=0% y1=0% x2=100% y2=100%>
+      <stop offset=0% stop-color=#0b1120 />
+      <stop offset=50% stop-color=#080c18 />
+      <stop offset=100% stop-color=#030712 />
+    </linearGradient>
+    <radialGradient id=dl-glow cx=50% cy=20% r=60%>
+      <stop offset=0% stop-color=#38bdf8 stop-opacity=0.3 />
+      <stop offset=100% stop-color=#38bdf8 stop-opacity=0 />
+    </radialGradient>
+    <linearGradient id=dl-panel x1=0% y1=0% x2=100% y2=100%>
+      <stop offset=0% stop-color=#111827 />
+      <stop offset=100% stop-color=#0b0f19 />
+    </linearGradient>
+  </defs>
+
+  <rect width=800 height=500 fill=url(#dl-bg) />
+  <rect width=800 height=500 fill=url(#dl-glow) />
+
+  <g stroke=rgba(56,189,248,0.06) stroke-width=1>
+    <line x1=0 y1=100 x2=800 y2=100 />
+    <line x1=0 y1=200 x2=800 y2=200 />
+    <line x1=0 y1=300 x2=800 y2=300 />
+    <line x1=0 y1=400 x2=800 y2=400 />
+    <line x1=200 y1=0 x2=200 y2=500 />
+    <line x1=400 y1=0 x2=400 y2=500 />
+    <line x1=600 y1=0 x2=600 y2=500 />
+  </g>
+
+  <!-- Workspace Window Frame -->
+  <g transform=translate(50, 40)>
+    <rect width=700 height=420 rx=12 fill=#090d16 stroke=rgba(56, 189, 248, 0.28) stroke-width=1.5 />
+    
+    <!-- Titlebar -->
+    <rect width=700 height=40 rx=12 fill=#0f172a />
+    <circle cx=24 cy=20 r=5 fill=#ef4444 />
+    <circle cx=42 cy=20 r=5 fill=#f59e0b />
+    <circle cx=60 cy=20 r=5 fill=#10b981 />
+    
+    <rect x=90 y=9 width=340 height=22 rx=6 fill=rgba(255,255,255,0.06) />
+    <text x=104 y=24 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=11>devlens.workspace / api-collections / v1 / users</text>
+
+    <rect x=550 y=10 width=135 height=20 rx=4 fill=rgba(56,189,248,0.15) stroke=rgba(56,189,248,0.4) stroke-width=1 />
+    <text x=560 y=24 fill=#38bdf8 font-family='JetBrains Mono', monospace font-size=10 font-weight=bold>● LCS DIFF ENGINE</text>
+
+    <!-- Sidebar: Collections -->
+    <rect x=15 y=52 width=165 height=352 rx=8 fill=#0b1120 stroke=rgba(255,255,255,0.05) />
+    <text x=28 y=76 fill=#64748b font-family='JetBrains Mono', monospace font-size=10 font-weight=bold>COLLECTIONS</text>
+    <rect x=25 y=88 width=145 height=26 rx=5 fill=rgba(56,189,248,0.12) stroke=rgba(56,189,248,0.3) />
+    <text x=34 y=105 fill=#38bdf8 font-family='JetBrains Mono', monospace font-size=11 font-weight=bold>GET /api/v1/auth</text>
+    <text x=34 y=132 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=11>POST /users/sync</text>
+    <text x=34 y=156 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=11>PUT /stream/events</text>
+    <text x=34 y=180 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=11>DEL /cache/tokens</text>
+
+    <rect x=25 y=205 width=145 height=1 fill=rgba(255,255,255,0.06) />
+    <text x=28 y=228 fill=#64748b font-family='JetBrains Mono', monospace font-size=10 font-weight=bold>PROXY STATUS</text>
+    <rect x=25 y=238 width=145 height=24 rx=5 fill=rgba(16,185,129,0.1) stroke=rgba(16,185,129,0.3) />
+    <text x=34 y=254 fill=#34d399 font-family='JetBrains Mono', monospace font-size=10>Express CORS Fallback: ON</text>
+
+    <!-- Main Request Bar -->
+    <rect x=195 y=52 width=490 height=42 rx=8 fill=#111827 stroke=rgba(255,255,255,0.08) />
+    <rect x=202 y=60 width=56 height=26 rx=4 fill=#0284c7 />
+    <text x=214 y=77 fill=#fff font-family='JetBrains Mono', monospace font-size=11 font-weight=bold>GET</text>
+    <text x=268 y=78 fill=#e2e8f0 font-family='JetBrains Mono', monospace font-size=12>https://api.gateway.dev/v1/telemetry/payload</text>
+    <rect x=618 y=59 width=60 height=28 rx=5 fill=#38bdf8 />
+    <text x=632 y=77 fill=#080c18 font-family=sans-serif font-size=11 font-weight=bold>SEND</text>
+
+    <!-- Response & LCS Diff Panels -->
+    <!-- Panel Left: Response Inspector -->
+    <g transform=translate(195, 104)>
+      <rect width=238 height=300 rx=8 fill=#0a0f1d stroke=rgba(255,255,255,0.06) />
+      <rect width=238 height=30 rx=8 fill=#0f172a />
+      <text x=14 y=20 fill=#38bdf8 font-family='JetBrains Mono', monospace font-size=10.5 font-weight=bold>200 OK · 42ms · 1.8KB</text>
+      
+      <text x=14 y=54 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>1</text>
+      <text x=32 y=54 fill=#cbd5e1 font-family='JetBrains Mono', monospace font-size=10>{</text>
+      <text x=14 y=74 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>2</text>
+      <text x=32 y=74 fill=#38bdf8 font-family='JetBrains Mono', monospace font-size=10>  status: success,</text>
+      <text x=14 y=94 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>3</text>
+      <text x=32 y=94 fill=#f59e0b font-family='JetBrains Mono', monospace font-size=10>  version: 2.4.0,</text>
+      <text x=14 y=114 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>4</text>
+      <text x=32 y=114 fill=#a78bfa font-family='JetBrains Mono', monospace font-size=10>  records: [</text>
+      <text x=14 y=134 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>5</text>
+      <text x=32 y=134 fill=#cbd5e1 font-family='JetBrains Mono', monospace font-size=10>    { id: req_892 },</text>
+      <text x=14 y=154 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>6</text>
+      <text x=32 y=154 fill=#cbd5e1 font-family='JetBrains Mono', monospace font-size=10>    { id: req_893 }</text>
+      <text x=14 y=174 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>7</text>
+      <text x=32 y=174 fill=#a78bfa font-family='JetBrains Mono', monospace font-size=10>  ]</text>
+      <text x=14 y=194 fill=#64748b font-family='JetBrains Mono', monospace font-size=10>8</text>
+      <text x=32 y=194 fill=#cbd5e1 font-family='JetBrains Mono', monospace font-size=10>}</text>
+
+      <rect x=14 y=240 width=210 height=42 rx=6 fill=rgba(56,189,248,0.06) stroke=rgba(56,189,248,0.2) />
+      <text x=24 y=258 fill=#e2e8f0 font-family=sans-serif font-size=10 font-weight=bold>TanStack Query Cache</text>
+      <text x=24 y=272 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=9>Stale Time: 300s · Hydrated</text>
+    </g>
+
+    <!-- Panel Right: LCS Diff Viewer -->
+    <g transform=translate(447, 104)>
+      <rect width=238 height=300 rx=8 fill=#0a0f1d stroke=rgba(255,255,255,0.06) />
+      <rect width=238 height=30 rx=8 fill=#0f172a />
+      <text x=14 y=20 fill=#a78bfa font-family='JetBrains Mono', monospace font-size=10.5 font-weight=bold>LCS Diff Engine (Split View)</text>
+
+      <rect x=10 y=44 width=218 height=20 rx=3 fill=rgba(239,68,68,0.15) />
+      <text x=16 y=58 fill=#f87171 font-family='JetBrains Mono', monospace font-size=9.5>- timeout: 3000</text>
+
+      <rect x=10 y=68 width=218 height=20 rx=3 fill=rgba(16,185,129,0.15) />
+      <text x=16 y=82 fill=#34d399 font-family='JetBrains Mono', monospace font-size=9.5>+ timeout: 8000</text>
+
+      <text x=16 y=106 fill=#64748b font-family='JetBrains Mono', monospace font-size=9.5>  retryPolicy: exponential</text>
+      
+      <rect x=10 y=116 width=218 height=20 rx=3 fill=rgba(16,185,129,0.15) />
+      <text x=16 y=130 fill=#34d399 font-family='JetBrains Mono', monospace font-size=9.5>+ proxyFallback: true</text>
+
+      <rect x=14 y=240 width=210 height=42 rx=6 fill=rgba(168,85,247,0.08) stroke=rgba(168,85,247,0.25) />
+      <text x=24 y=258 fill=#e2e8f0 font-family=sans-serif font-size=10 font-weight=bold>Similarity Score: 94.2%</text>
+      <text x=24 y=272 fill=#a78bfa font-family='JetBrains Mono', monospace font-size=9>3 insertions · 1 deletion</text>
+    </g>
+  </g>
+</svg>

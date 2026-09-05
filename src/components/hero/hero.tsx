@@ -88,17 +88,21 @@ export default function Hero() {
               <span className="absolute -bottom-[1px] -left-[1px] w-3 h-3 border-b-[1.5px] border-l-[1.5px] border-[var(--accent)] pointer-events-none opacity-80" />
               <span className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b-[1.5px] border-r-[1.5px] border-[var(--accent)] pointer-events-none opacity-80" />
 
-              <div className="relative w-full aspect-[16/12] sm:aspect-[4/4.5] rounded-[var(--r1)] overflow-hidden bg-[#090a0d] border border-white/5 flex flex-col items-center justify-center">
+              <div className="relative w-full aspect-[16/12] sm:aspect-[4/4.5] rounded-[var(--r1)] overflow-hidden bg-[#07080b] border border-white/5 flex flex-col items-center justify-center">
                 {/* Developer Portrait Artwork */}
                 <img
-                  src="/images/developer-portrait.svg"
+                  src="/images/yogesh-portrait.jpg"
                   alt="Yogesh Meena - Full-Stack Developer"
-                  className="w-full h-full object-cover object-center block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover object-top block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                   loading="eager"
                 />
 
+                {/* Seamless architectural dark vignette & bottom shadow fade */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#090a0d] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-[var(--r1)]" />
+
                 {/* Bottom Overlay Pill on Image */}
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-center gap-2 bg-[#09090b]/85 backdrop-blur-md border border-[var(--border-strong)] py-2 px-3.5 rounded-full font-mono text-[11px] text-white">
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-center gap-2 bg-[#09090b]/90 backdrop-blur-md border border-[var(--border-strong)] py-2 px-3.5 rounded-full font-mono text-[11px] text-white shadow-lg">
                   <span className="w-1.5 h-1.5 rounded-full bg-[var(--status-green)] shadow-[0_0_0_2px_rgba(34,197,94,0.2)]" />
                   <span>Available · Open to Work</span>
                 </div>

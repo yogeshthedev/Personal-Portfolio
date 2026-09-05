@@ -1,0 +1,124 @@
+﻿<svg xmlns=http://www.w3.org/2000/svg viewBox=0 0 800 500 width=100% height=100%>
+  <defs>
+    <linearGradient id=vd-bg x1=0% y1=0% x2=100% y2=100%>
+      <stop offset=0% stop-color=#140d21 />
+      <stop offset=50% stop-color=#0e0717 />
+      <stop offset=100% stop-color=#050209 />
+    </linearGradient>
+    <radialGradient id=vd-glow cx=50% cy=30% r=60%>
+      <stop offset=0% stop-color=#8b5cf6 stop-opacity=0.35 />
+      <stop offset=100% stop-color=#8b5cf6 stop-opacity=0 />
+    </radialGradient>
+    <linearGradient id=vd-player x1=0% y1=0% x2=100% y2=100%>
+      <stop offset=0% stop-color=#1f1035 />
+      <stop offset=100% stop-color=#120921 />
+    </linearGradient>
+  </defs>
+
+  <rect width=800 height=500 fill=url(#vd-bg) />
+  <rect width=800 height=500 fill=url(#vd-glow) />
+
+  <!-- Subtle grid pattern -->
+  <g stroke=rgba(139,92,246,0.06) stroke-width=1>
+    <line x1=0 y1=100 x2=800 y2=100 />
+    <line x1=0 y1=200 x2=800 y2=200 />
+    <line x1=0 y1=300 x2=800 y2=300 />
+    <line x1=0 y1=400 x2=800 y2=400 />
+    <line x1=200 y1=0 x2=200 y2=500 />
+    <line x1=400 y1=0 x2=400 y2=500 />
+    <line x1=600 y1=0 x2=600 y2=500 />
+  </g>
+
+  <!-- Video Streaming App Frame -->
+  <g transform=translate(50, 40)>
+    <rect width=700 height=420 rx=12 fill=#0c0714 stroke=rgba(139, 92, 246, 0.3) stroke-width=1.5 />
+    
+    <!-- Titlebar -->
+    <rect width=700 height=40 rx=12 fill=#170e28 />
+    <circle cx=24 cy=20 r=5 fill=#ef4444 />
+    <circle cx=42 cy=20 r=5 fill=#f59e0b />
+    <circle cx=60 cy=20 r=5 fill=#10b981 />
+    
+    <rect x=90 y=9 width=320 height=22 rx=6 fill=rgba(255,255,255,0.06) />
+    <text x=104 y=24 fill=#a78bfa font-family='JetBrains Mono', monospace font-size=11>vidra.stream / watch?v=vid_8932</text>
+
+    <rect x=535 y=10 width=150 height=20 rx=4 fill=rgba(139,92,246,0.18) stroke=rgba(139,92,246,0.4) stroke-width=1 />
+    <text x=543 y=24 fill=#c4b5fd font-family='JetBrains Mono', monospace font-size=10 font-weight=bold>● CUSTOM HTML5 PLAYER</text>
+
+    <!-- Main Player Section (Left) -->
+    <g transform=translate(20, 52)>
+      <!-- Video Viewport -->
+      <rect width=450 height=240 rx=8 fill=url(#vd-player) stroke=rgba(255,255,255,0.08) />
+      
+      <!-- Video abstract graphic -->
+      <circle cx=225 cy=115 r=45 fill=rgba(139, 92, 246, 0.25) />
+      <polygon points=218,100 240,115 218,130 fill=#a78bfa />
+      
+      <!-- Custom Timeline & Player Controls -->
+      <rect y=195 width=450 height=45 rx=0 fill=rgba(10, 5, 18, 0.9) />
+      <!-- Timeline bar (Buffer visualization) -->
+      <rect x=15 y=202 width=420 height=4 rx=2 fill=rgba(255,255,255,0.15) />
+      <rect x=15 y=202 width=280 height=4 rx=2 fill=rgba(139,92,246,0.5) />
+      <rect x=15 y=202 width=160 height=4 rx=2 fill=#8b5cf6 />
+      <circle cx=175 cy=204 r=5 fill=#fff />
+
+      <!-- Controls row -->
+      <text x=15 y=228 fill=#e2e8f0 font-family=sans-serif font-size=12>▶</text>
+      <text x=35 y=228 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=10>04:12 / 12:45</text>
+      
+      <rect x=330 y=215 width=32 height=18 rx=3 fill=rgba(255,255,255,0.1) />
+      <text x=336 y=228 fill=#c4b5fd font-family='JetBrains Mono', monospace font-size=9>1.5x</text>
+      
+      <text x=375 y=228 fill=#cbd5e1 font-family=sans-serif font-size=11>💬</text>
+      <text x=400 y=228 fill=#cbd5e1 font-family=sans-serif font-size=11>⛶</text>
+
+      <!-- Video Details below player -->
+      <text x=0 y=312 fill=#fff font-family=sans-serif font-size=14 font-weight=bold>Building Scalable Microservices with Node.js &amp; MongoDB</text>
+      <text x=0 y=332 fill=#94a3b8 font-family=sans-serif font-size=11>Vidra Tech · 14.8K views · Streamed in 4K via Cloudinary</text>
+
+      <!-- Action badges -->
+      <rect x=0 y=344 width=85 height=22 rx=4 fill=rgba(139,92,246,0.15) stroke=rgba(139,92,246,0.3) />
+      <text x=10 y=359 fill=#c4b5fd font-family='JetBrains Mono', monospace font-size=10>👍 1.2K Likes</text>
+
+      <rect x=95 y=344 width=115 height=22 rx=4 fill=rgba(255,255,255,0.06) />
+      <text x=105 y=359 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=10>JWT Cookie Auth</text>
+    </g>
+
+    <!-- Sidebar / Playlist / Up Next (Right) -->
+    <g transform=translate(485, 52)>
+      <rect width=195 height=352 rx=8 fill=#0f091c stroke=rgba(255,255,255,0.05) />
+      <text x=14 y=24 fill=#a78bfa font-family='JetBrains Mono', monospace font-size=10.5 font-weight=bold>UP NEXT / PLAYLIST</text>
+
+      <!-- Playlist item 1 -->
+      <g transform=translate(10, 36)>
+        <rect width=175 height=56 rx=6 fill=rgba(139,92,246,0.1) stroke=rgba(139,92,246,0.25) />
+        <rect x=6 y=6 width=60 height=44 rx=4 fill=#25163f />
+        <text x=72 y=22 fill=#fff font-family=sans-serif font-size=10 font-weight=bold>Next: Express Queues</text>
+        <text x=72 y=36 fill=#94a3b8 font-family=sans-serif font-size=9>Axios Token Refresh</text>
+        <text x=72 y=48 fill=#8b5cf6 font-family='JetBrains Mono', monospace font-size=8.5>08:24</text>
+      </g>
+
+      <!-- Playlist item 2 -->
+      <g transform=translate(10, 102)>
+        <rect width=175 height=56 rx=6 fill=rgba(255,255,255,0.03) />
+        <rect x=6 y=6 width=60 height=44 rx=4 fill=#1b112c />
+        <text x=72 y=22 fill=#cbd5e1 font-family=sans-serif font-size=10 font-weight=bold>Cloudinary Storage</text>
+        <text x=72 y=36 fill=#64748b font-family=sans-serif font-size=9>Direct Chunk Uploads</text>
+        <text x=72 y=48 fill=#64748b font-family='JetBrains Mono', monospace font-size=8.5>14:10</text>
+      </g>
+
+      <!-- Playlist item 3 -->
+      <g transform=translate(10, 168)>
+        <rect width=175 height=56 rx=6 fill=rgba(255,255,255,0.03) />
+        <rect x=6 y=6 width=60 height=44 rx=4 fill=#1b112c />
+        <text x=72 y=22 fill=#cbd5e1 font-family=sans-serif font-size=10 font-weight=bold>WebSocket Comments</text>
+        <text x=72 y=36 fill=#64748b font-family=sans-serif font-size=9>Real-time interactions</text>
+        <text x=72 y=48 fill=#64748b font-family='JetBrains Mono', monospace font-size=8.5>11:05</text>
+      </g>
+
+      <rect x=10 y=290 width=175 height=50 rx=6 fill=rgba(139,92,246,0.08) stroke=rgba(139,92,246,0.2) />
+      <text x=18 y=310 fill=#c4b5fd font-family=sans-serif font-size=10 font-weight=bold>Active Session Guard</text>
+      <text x=18 y=326 fill=#94a3b8 font-family='JetBrains Mono', monospace font-size=9>Axios refresh interceptor</text>
+    </g>
+  </g>
+</svg>
