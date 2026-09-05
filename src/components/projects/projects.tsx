@@ -3,7 +3,7 @@ import { FiArrowUpRight, FiGithub, FiCheckCircle, FiExternalLink } from 'react-i
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-20 lg:py-[100px] border-b border-[var(--borderY]">
+    <section id="projects" className="relative py-20 lg:py-[100px] border-b border-[var(--border)]">
       <div className="container">
         {/* Section Header */}
         <div className="flex justify-between items-end mb-14 flex-wrap gap-5 pb-6 border-b border-[var(--border)]">

@@ -58,14 +58,37 @@ export default function About() {
     <section id="about" className="py-20 lg:py-[100px] pb-24 lg:pb-[120px] relative">
       <div className="container">
         {/* Simple & clear section header */}
-        <div className="mb-12">
+        <div className="mb-10">
           <span className="label">03 // Profile</span>
           <h2 className="section-h mt-2.5 mb-3 text-[clamp(34px,4.5vw,54px)] leading-[1.1]">
             About <em>Me</em>
           </h2>
           <p className="text-[15px] text-[var(--sub)] max-w-[540px] leading-[1.7] m-0">
-            A quick overview of my background, technical skills, and how I build web products.
+            A quick glimpse into who I am, what drives me, and the mindset behind my craft.
           </p>
+        </div>
+
+        {/* ── Personal Story / Bio Card ── */}
+        <div className="mb-5 bg-[var(--card)] border border-[var(--border)] rounded-[var(--r2)] p-6 sm:p-8 relative overflow-hidden transition-all duration-200 hover:border-[var(--bhi)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
+          {/* Subtle Accent Edge */}
+          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 via-white/50 to-transparent" />
+
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-[var(--accent)] font-semibold">
+                Who I Am
+              </span>
+            </div>
+
+            <p className="text-[15px] sm:text-[16px] text-white/90 leading-[1.85] font-normal m-0 max-w-[840px]">
+              Hi, I’m <strong className="text-white font-semibold">Yogesh Meena</strong> — a full-stack developer who loves taking ideas from a blank canvas to smooth, reliable digital experiences. Beyond writing code, I care deeply about solving real-world problems, crafting interfaces that feel effortless to navigate, and writing clean, maintainable systems that scale gracefully.
+            </p>
+
+            <p className="text-[14px] sm:text-[14.5px] text-[var(--sub)] leading-[1.8] m-0 max-w-[840px]">
+              When I'm not at the keyboard building apps or exploring new technologies, you'll find me learning about system design, experimenting with modern UI patterns, and collaborating with fellow creators to build meaningful products.
+            </p>
+          </div>
         </div>
 
         {/* ── Modern Architectural Bento Grid ── */}

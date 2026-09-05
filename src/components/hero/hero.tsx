@@ -1,4 +1,3 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi'
 
 export default function Hero() {
@@ -79,16 +78,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Architectural Profile Image Frame — Perfectly Aligned */}
-          <div className="flex justify-start lg:justify-end items-start w-full">
-            <div className="group relative w-full max-w-full sm:max-w-[400px] bg-[#121216]/70 backdrop-blur-[20px] border border-white/10 rounded-[var(--r2)] p-4 shadow-[0_20px_48px_-12px_rgba(0,0,0,0.65),0_0_0_1px_rgba(255,255,255,0.03)] transition-all duration-350 hover:border-white/25 hover:-translate-y-1 hover:shadow-[0_28px_60px_-16px_rgba(0,0,0,0.75),0_0_30px_-8px_rgba(56,189,248,0.12)]">
-              {/* Subtle Corner Markers */}
-              <span className="absolute -top-[1px] -left-[1px] w-3 h-3 border-t-[1.5px] border-l-[1.5px] border-[var(--accent)] pointer-events-none opacity-80" />
-              <span className="absolute -top-[1px] -right-[1px] w-3 h-3 border-t-[1.5px] border-r-[1.5px] border-[var(--accent)] pointer-events-none opacity-80" />
-              <span className="absolute -bottom-[1px] -left-[1px] w-3 h-3 border-b-[1.5px] border-l-[1.5px] border-[var(--accent)] pointer-events-none opacity-80" />
-              <span className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b-[1.5px] border-r-[1.5px] border-[var(--accent)] pointer-events-none opacity-80" />
-
-              <div className="relative w-full aspect-[16/12] sm:aspect-[4/4.5] rounded-[var(--r1)] overflow-hidden bg-[#07080b] border border-white/5 flex flex-col items-center justify-center">
+          {/* Right Column: Sleek Modern Profile Image Card */}
+          <div className="flex justify-center lg:justify-end items-start w-full order-first lg:order-last">
+            <div className="group relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[400px] bg-[#121216]/80 backdrop-blur-[20px] border border-white/10 rounded-[var(--r2)] p-3 sm:p-4 shadow-[0_20px_48px_-12px_rgba(0,0,0,0.65),0_0_0_1px_rgba(255,255,255,0.03)] transition-all duration-350 hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_28px_60px_-16px_rgba(0,0,0,0.75)]">
+              
+              <div className="relative w-full aspect-[4/4.2] sm:aspect-[4/4.5] rounded-[var(--r1)] overflow-hidden bg-[#07080b] border border-white/5 flex flex-col items-center justify-center">
                 {/* Developer Portrait Artwork */}
                 <img
                   src="/images/yogesh-portrait.jpg"
@@ -97,28 +91,21 @@ export default function Hero() {
                   loading="eager"
                 />
 
-                {/* Seamless architectural dark vignette & bottom shadow fade */}
+                {/* Seamless architectural dark vignette */}
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#090a0d] via-transparent to-transparent opacity-80" />
                 <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-[var(--r1)]" />
 
                 {/* Bottom Overlay Pill on Image */}
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-center gap-2 bg-[#09090b]/90 backdrop-blur-md border border-[var(--border-strong)] py-2 px-3.5 rounded-full font-mono text-[11px] text-white shadow-lg">
+                <div className="absolute bottom-2.5 sm:bottom-3.5 left-2.5 sm:left-3.5 right-2.5 sm:right-3.5 flex items-center justify-center gap-2 bg-[#09090b]/90 backdrop-blur-md border border-[var(--border-strong)] py-1.5 sm:py-2 px-3 sm:px-3.5 rounded-full font-mono text-[10px] sm:text-[11px] text-white shadow-lg">
                   <span className="w-1.5 h-1.5 rounded-full bg-[var(--status-green)] shadow-[0_0_0_2px_rgba(34,197,94,0.2)]" />
                   <span>Available · Open to Work</span>
                 </div>
               </div>
 
-              {/* Card Meta Footer */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 mt-3.5 pt-3 border-t border-[var(--border)]">
-                <div className="flex flex-col gap-0.5">
-                  <span className="font-mono text-[9.5px] uppercase tracking-[0.1em] text-[var(--faint)]">Focus</span>
-                  <span className="text-[11.5px] text-white font-medium">Frontend &amp; Backend Systems</span>
-                </div>
-                <div className="hidden sm:block text-[var(--border-strong)] text-xs">/</div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="font-mono text-[9.5px] uppercase tracking-[0.1em] text-[var(--faint)]">Discipline</span>
-                  <span className="text-[11.5px] text-white font-medium">Clean Architecture &amp; Type Safety</span>
-                </div>
+              {/* Card Meta Footer: Clean Name & Title */}
+              <div className="flex items-center justify-between gap-2 mt-2.5 sm:mt-3.5 pt-2.5 sm:pt-3 border-t border-[var(--border)]">
+                <span className="font-heading text-[12px] sm:text-[13px] font-semibold text-white">Yogesh Meena</span>
+                <span className="font-mono text-[10.5px] text-[var(--sub)]">Full-Stack Eng</span>
               </div>
             </div>
           </div>

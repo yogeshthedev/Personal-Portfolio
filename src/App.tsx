@@ -7,10 +7,12 @@ import About from '@/components/about/about'
 import Contact from '@/components/contact/contact'
 import Footer from '@/components/footer/footer'
 import ScrollToTop from '@/components/common/ScrollToTop'
+import ScrollProgress from '@/components/common/ScrollProgress'
 
 export default function App() {
   return (
     <>
+      <ScrollProgress />
       <Cursor />
       <Navbar />
       <Hero />
