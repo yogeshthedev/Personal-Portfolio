@@ -31,8 +31,8 @@
 
 
   /* ── Typography Scale & Structure (Shared across all palettes) ── */
-  --fh: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --fs: 'Playfair Display', Georgia, serif;
+  --fh: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fs: 'Instrument Serif', Georgia, serif;
   --fm: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --r1: 4px;
   --r2: 8px;

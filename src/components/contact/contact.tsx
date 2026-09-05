@@ -102,7 +102,7 @@ export default function Contact() {
 
               <div className="inline-flex items-center gap-3 font-mono text-xs text-[var(--faint)]">
                 <span className="text-[var(--accent)] text-[15px] flex items-center"><FiMapPin /></span>
-                <span>Kota, Rajasthan, IN (UTC +05:30)</span>
+                <span>Jaipur, Rajasthan, IN (UTC +05:30)</span>
               </div>
             </div>
           </div>

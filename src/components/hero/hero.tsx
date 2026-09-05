@@ -16,7 +16,7 @@ export default function Hero() {
             </span>
           </div>
           <div className="hidden sm:flex font-mono text-[11.5px] text-[var(--faint)] tracking-[0.08em] items-center gap-2">
-            <span>Kota, IN</span>
+            <span>Jaipur, IN</span>
           </div>
         </div>
 

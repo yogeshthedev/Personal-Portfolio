@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="px-[var(--pad)] py-6 sm:py-9 2xl:py-10 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between flex-wrap gap-3 md:gap-4 text-center md:text-left">
       <div className="flex items-center gap-2.5">
         <Logo size={28} className="shrink-0" />
-        <div className="font-['Outfit',sans-serif] text-base font-bold -tracking-[0.02em] text-white">
+        <div className="font-heading text-base font-bold -tracking-[0.02em] text-white">
           <span>Yogesh Meena</span>
         </div>
       </div>
