@@ -1,4 +1,4 @@
-﻿export type ProjectTheme = 'fire' | 'violet' | 'mint'
+export type ProjectTheme = 'fire' | 'violet' | 'mint'
 
 export type ProjectItem = {
   id: string
@@ -30,7 +30,7 @@ export const projectData: ProjectItem[] = [
     image: '/images/project-devlens.svg',
     tags: ['React', 'TypeScript', 'Express', 'MongoDB', 'Zustand', 'TanStack Query'],
     year: '2025',
-    liveUrl: 'https://devlens.vercel.app',
+    liveUrl: 'https://dev-lens-gold.vercel.app/',
     githubUrl: 'https://github.com/yogeshthedev/devlens',
     theme: 'violet',
     metricsBadge: 'API & Diff Tooling',
@@ -56,7 +56,7 @@ export const projectData: ProjectItem[] = [
     image: '/images/project-vidra.svg',
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Cloudinary', 'Tailwind CSS'],
     year: '2025',
-    liveUrl: 'https://vidra.vercel.app',
+    liveUrl: 'https://vidra-video.vercel.app/',
     githubUrl: 'https://github.com/yogeshthedev/vidra',
     theme: 'fire',
     metricsBadge: 'Media & Streaming',
